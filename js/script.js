@@ -435,8 +435,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 });
-  });
-});
 
 /* ===== TYPING ANIMATION FOR MOTTO ===== */
 (function initTypingEffect() {
