@@ -212,18 +212,18 @@ function renderCampusGrid(tab) {
 
 /* ===== GALLERY DATA & FILTER ===== */
 const galleryImages = [
-  { src: 'img/school_assembly.jpg', caption: 'School Assembly — Morning Devotion', cat: 'worship' },
-  { src: 'img/classroom_study.jpg', caption: 'Students in Classroom — Physics Lesson', cat: 'academics' },
-  { src: 'img/students_praying.jpg', caption: 'Student in Prayer at School Chapel', cat: 'worship' },
-  { src: 'hero_classroom.png', caption: 'Modern Computer Lab — ICT Lesson', cat: 'academics' },
-  { src: 'sports_field.png', caption: 'Sports Day — Football and Netball', cat: 'sports' },
-  { src: 'vocational_training.png', caption: 'Vocational Training — Practical Skills', cat: 'vocational' },
-  { src: 'chapel_worship.png', caption: 'School Chapel — Weekly Mass', cat: 'worship' },
-  { src: 'hero_classroom.png', caption: 'Science Laboratory — Biology Practical', cat: 'academics' },
-  { src: 'sports_field.png', caption: 'Athletics — Inter-School Competition', cat: 'sports' },
-  { src: 'vocational_training.png', caption: 'Agriculture Program — School Farm', cat: 'vocational' },
-  { src: 'img/classroom_study.jpg', caption: 'Senior Five — A-Level Chemistry', cat: 'academics' },
-  { src: 'chapel_worship.png', caption: 'Annual Prize-Giving Day Celebration', cat: 'events' },
+  { src: 'img/assbly.jpeg', caption: 'School Assembly — Morning Devotion', cat: 'worship' },
+  { src: 'img/phys.jpg', caption: 'Students in Physics Lesson', cat: 'academics' },
+  { src: 'img/intro.jpg', caption: 'School Introduction Day', cat: 'events' },
+  { src: 'img/intro 2.jpg', caption: 'Welcoming New Students', cat: 'events' },
+  { src: 'img/hall.jpg', caption: 'School Hall — Gatherings & Events', cat: 'events' },
+  { src: 'img/bo gams.jpg', caption: 'Board Games — Students at Play', cat: 'sports' },
+  { src: 'img/kisuro.jpg', caption: 'Classroom Session — Kiswahili Lesson', cat: 'academics' },
+  { src: 'img/st kibina.jpg', caption: 'St. Kizito Choir Performance', cat: 'worship' },
+  { src: 'img/trs.webp', caption: 'Our Dedicated Teachers', cat: 'academics' },
+  { src: 'img/tr st.webp', caption: 'Staff Meeting & Planning', cat: 'academics' },
+  { src: 'img/spkg mi.webp', caption: 'Student Public Speaking', cat: 'academics' },
+  { src: 'img/st para2.webp', caption: 'School Parade', cat: 'events' },
 ];
 
 let currentGalleryFilter = 'all';
@@ -425,25 +425,16 @@ $$('a[href^="#"]').forEach(link => {
 
 /* ===== IMAGE FALLBACKS ===== */
 // Use school-provided photos where possible
-const imageMap = {
-  'img/school_assembly.jpg': 'img/school_assembly.jpg',
-  'img/classroom_study.jpg': 'img/classroom_study.jpg',
-  'img/students_praying.jpg': 'img/students_praying.jpg',
-};
-
-// On DOM load, ensure about section images fallback gracefully
 document.addEventListener('DOMContentLoaded', () => {
   $$('img[src]').forEach(img => {
     img.addEventListener('error', function() {
-      // Fallback to AI-generated image
-      if (this.src.includes('school_assembly')) this.src = 'hero_classroom.png';
-      else if (this.src.includes('classroom_study')) this.src = 'hero_classroom.png';
-      else if (this.src.includes('students_praying')) this.src = 'chapel_worship.png';
-      else if (!this.dataset.fallbackApplied) {
+      if (!this.dataset.fallbackApplied) {
         this.dataset.fallbackApplied = '1';
-        this.src = 'school_logo.png';
+        this.src = 'hero_classroom.png';
       }
     });
+  });
+});
   });
 });
 
@@ -482,4 +473,4 @@ window.addEventListener('scroll', () => {
 
 console.log('%c🎓 St. John Paul II Secondary School Nakuwadde', 'color:#0A2472;font-size:18px;font-weight:bold;');
 console.log('%c"A Creative Space for a Mind"', 'color:#C9A84C;font-size:14px;font-style:italic;');
-console.log('%cWebsite powered by modern web technology. Admissions: +256 703 222 657', 'color:#64748B;font-size:12px;');
+console.log('%cWebsite powered by modern web technology. Admissions: +256 703 262 686', 'color:#64748B;font-size:12px;');
