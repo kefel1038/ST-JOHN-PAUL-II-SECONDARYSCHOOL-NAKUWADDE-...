@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="News and events at St. John Paul II Secondary School Nakuwadde — Academic updates, sports news, announcements, and community activities." />
+  <title>News & Events | St. John Paul II Secondary School Nakuwadde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero { background:linear-gradient(135deg,var(--royal-blue) 0%,#0D2D8A 60%,#0A2060 100%); padding:120px 0 70px; position:relative; overflow:hidden; }
+    .page-hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:60px; background:var(--white); clip-path:ellipse(55% 100% at 50% 100%); }
+    .page-hero-title { font-family:var(--font-display); font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--white); margin-bottom:12px; }
+    .page-hero-sub { color:rgba(255,255,255,0.8); font-size:1.05rem; }
+    .breadcrumb { display:flex;align-items:center;gap:8px;font-size:0.82rem;color:rgba(255,255,255,0.7);margin-bottom:20px; }
+    .breadcrumb a { color:var(--gold-light); } .breadcrumb span { color:rgba(255,255,255,0.5); }
+
+    .news-article {
+      border: 1px solid var(--gray-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      background: var(--white);
+      transition: var(--transition);
+      margin-bottom: 30px;
+    }
+    .news-article:hover { box-shadow: var(--shadow-lg); }
+    .news-article-img {
+      height: 300px;
+      background: linear-gradient(135deg, var(--royal-blue), var(--blue-light));
+      position: relative;
+      overflow: hidden;
+    }
+    .news-article-img img { width: 100%; height: 100%; object-fit: cover; }
+    .news-article-body { padding: 32px; }
+    .news-article-cat {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--white);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .news-article-title {
+      font-family: var(--font-display);
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--royal-blue);
+      margin-bottom: 10px;
+      line-height: 1.3;
+    }
+    .news-article-meta {
+      display: flex; align-items: center; gap: 16px;
+      font-size: 0.82rem; color: var(--gray-500);
+      margin-bottom: 16px;
+    }
+    .news-article-text {
+      font-size: 0.92rem; color: var(--gray-600);
+      line-height: 1.8;
+    }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="tel:+256703222657"><i class="fas fa-phone"></i> +256 703 222 657</a>
+      <a href="tel:+256757754429"><i class="fas fa-phone"></i> +256 757 754 429</a>
+    </div>
+    <div class="top-bar-right">
+      <span><i class="fas fa-map-marker-alt"></i> Nakuwadde, Bulenga, Wakiso District</span>
+      <div class="top-bar-social">
+        <a href="https://www.facebook.com/groups/stjohnpaulss" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/256703222657" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container">
+    <nav class="navbar">
+      <a href="../index.html" class="nav-brand">
+        <img src="../school_logo.png" alt="St. John Paul II SS Logo" class="nav-logo" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">St. John Paul II Secondary School</span>
+          <span class="nav-brand-motto">"A Creative Space for a Mind"</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="academics.html" class="nav-link">Academics</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="news.html" class="nav-link active">News &amp; Events</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="admissions.html" class="btn btn-gold btn-sm nav-cta">Apply Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>News &amp; Events</span></div>
+    <h1 class="page-hero-title">News &amp; Events</h1>
+    <p class="page-hero-sub">Stay updated with the latest news, academic updates, sports highlights, and community events from our school.</p>
+  </div>
+</div>
+
+<section class="section-py" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge"><i class="fas fa-newspaper"></i> Latest Updates</span>
+      <h2 class="section-title">All News &amp; Events</h2>
+      <p class="section-subtitle">Catch up on everything happening at St. John Paul II Secondary School.</p>
+    </div>
+
+    <div id="newsContainer">
+      <!-- Rendered by JS -->
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--royal-blue);color:rgba(255,255,255,0.8);text-align:center;padding:20px;font-family:var(--font-ui);font-size:0.85rem;">
+  © 2026 St. John Paul II Secondary Mixed Day &amp; Boarding School, Nakuwadde. |
+  <a href="../index.html" style="color:var(--gold-light);">Home</a> ·
+  <a href="admissions.html" style="color:var(--gold-light);">Apply Now</a> ·
+  <a href="contact.html" style="color:var(--gold-light);">Contact Us</a>
+</div>
+
+<a href="https://wa.me/256703222657" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<script src="../js/script.js"></script>
+<script>
+const newsArticles = [
+  {
+    cat: 'Academic Update',
+    title: 'Outstanding UCE 2025 Results — Our Students Excel!',
+    date: 'June 5, 2026',
+    author: 'Admin',
+    img: '../hero_classroom.png',
+    text: 'We are proud to celebrate our Senior Four class who recorded outstanding results in the Uganda Certificate of Education 2025 examinations. Multiple students achieved Division One passes, reflecting the hard work of our learners and dedicated teaching staff. The school recorded a 96% pass rate, with 25 students achieving Division One, 52 achieving Division Two, and the remainder passing in Divisions Three and Four. This marks a significant improvement from the previous year and demonstrates the effectiveness of our Competency-Based Curriculum approach. Our top-performing student, Aisha Nabatanzi, scored Aggregate 8, making her one of the top students in Wakiso District. "These results are a testament to the discipline and commitment of our students, the dedication of our teachers, and the support of our parents," said the Headteacher. "We are excited about the future and remain committed to academic excellence." We congratulate all our candidates and wish them well as they transition to Senior Five and other opportunities.'
+  },
+  {
+    cat: 'Sports',
+    title: 'Annual Sports Day 2026 — Registration Open Now',
+    date: 'May 28, 2026',
+    author: 'Sports Department',
+    img: '../sports_field.png',
+    text: 'We are excited to announce that our Annual Sports Day 2026 will be held on August 15, 2026. The event will feature football, netball, athletics, volleyball, and traditional games. All students are encouraged to register for their preferred sports through their class teachers or the Sports Department. Parents and community members are warmly invited to attend and cheer for our young athletes. The day will also include special races for parents and staff, as well as a prize-giving ceremony for outstanding performers across all sports categories from the academic year. Inter-house competitions will see the four houses — John Paul, Nakuwadde, Bulenga, and Mityana — compete for the coveted Sports Day Trophy. Registration closes on July 30, 2026.'
+  },
+  {
+    cat: 'Religious Activities',
+    title: 'Annual School Retreat — A Day of Reflection & Prayer',
+    date: 'May 15, 2026',
+    author: 'Chaplaincy',
+    img: '../chapel_worship.png',
+    text: 'Our annual school retreat was held on May 15, 2026, bringing together students, teachers, and staff for a day of spiritual reflection, prayer, and community bonding. The retreat, held under the theme "Renewing Our Minds, Strengthening Our Values," included Mass, guided meditation, group discussions on moral values, and personal reflection time. Guest speaker Fr. John Bosco Ssempala addressed students on the importance of integrity, purpose, and service in their daily lives. Students from all religious backgrounds participated meaningfully, reflecting our school\'s commitment to spiritual growth and character formation. The retreat concluded with a commitment ceremony where students pledged to uphold the values of respect, responsibility, and compassion.'
+  },
+  {
+    cat: 'Vocational',
+    title: 'New Poultry & Agriculture Workshop Officially Launched',
+    date: 'April 30, 2026',
+    author: 'Vocational Department',
+    img: '../vocational_training.png',
+    text: 'We are delighted to announce the official opening of our expanded Poultry and Agriculture Workshop on April 30, 2026. The new facility includes a modern poultry house with capacity for 500 birds, a demonstration farm for crop farming, and a produce storage area. This expansion was made possible through support from the local community and a generous grant from the Wakiso District Local Government. Students will now have hands-on training in poultry management, sustainable agriculture, soil conservation, and farm business management. The workshop will also serve as a practical learning centre for our Entrepreneurship program, where students learn to develop farm business plans and manage small agricultural enterprises. "This workshop transforms how we deliver vocational education," said the Head of Vocational Department. "Our students will graduate with real, marketable skills."'
+  },
+  {
+    cat: 'Achievements',
+    title: 'Debate Champions! Our Team Wins District Finals',
+    date: 'April 12, 2026',
+    author: 'Dean of Students',
+    img: '../hero_classroom.png',
+    text: 'Congratulations to our Debate Club for winning the Wakiso District Secondary Schools Debate Championship held on April 12, 2026. The team defeated 12 other schools from across the district in a thrilling competition that tested critical thinking, public speaking, and persuasive argumentation. The motion for the final debate was "Technology in Education: A Tool for Empowerment or Dependency?" Our team argued for the affirmative with compelling evidence and eloquence. Lead debater, Maria Nakato (S5), was awarded Best Speaker of the tournament. The victory qualifies our team for the National Secondary Schools Debate Championships to be held in Kampala later this year. We wish them the very best and thank the debate coach, Mr. Ssembatya, for his dedicated mentorship.'
+  },
+  {
+    cat: 'Announcement',
+    title: '2025/2026 Term 3 Timetable & Fee Payment Deadline',
+    date: 'March 20, 2026',
+    author: 'Administration',
+    img: '../hero_classroom.png',
+    text: 'This is a reminder to all parents and guardians that Term 3 of the 2025/2026 academic year will begin on Monday, September 8, 2026. The term will run for 12 weeks, ending on Friday, November 28, 2026. All school fees for Term 3 must be paid by August 25, 2026, to avoid late registration penalties. Payments can be made at the school bursar\'s office, via bank transfer, or through mobile money. The complete term timetable, including exam schedules, sports fixtures, and co-curricular activities, has been posted on the school notice board and will be shared via parents\' WhatsApp groups. Boarding students are expected to report on Sunday, September 7, 2026, between 2:00 PM and 5:00 PM. Day students should report on Monday, September 8, 2026, at 7:30 AM.'
+  },
+  {
+    cat: 'Community Projects',
+    title: 'Nakuwadde Community Clean-Up Campaign a Huge Success',
+    date: 'February 22, 2026',
+    author: 'Community Service Coordinator',
+    img: '../sports_field.png',
+    text: 'Over 200 students, teachers, and community members participated in the Nakuwadde Community Clean-Up Campaign on February 22, 2026. The initiative, organized by our Community Service Club in partnership with the Bulenga Trading Centre Authority, aimed to promote environmental awareness and civic responsibility. Volunteers cleared drainage channels, collected waste, planted trees along the main road, and sensitized residents on proper waste disposal. The event was praised by local leaders, including the Bulenga LC1 Chairperson, who commended our students for being exemplary citizens. "This is what makes St. John Paul II special — we don\'t just teach values, we live them," said the Headteacher. The clean-up campaign is now a termly activity, with the next one scheduled for September 2026.'
+  },
+  {
+    cat: 'Academic Update',
+    title: 'New Computer Lab with 40 Workstations Now Open',
+    date: 'January 15, 2026',
+    author: 'ICT Department',
+    img: '../hero_classroom.png',
+    text: 'We are excited to announce that our new state-of-the-art computer laboratory is now fully operational. Equipped with 40 modern workstations, high-speed internet, and the latest educational software, the lab will serve students across all classes for ICT lessons, research, and digital skills training. The facility was officially commissioned by the Wakiso District Education Officer on January 15, 2026. Each workstation is pre-loaded with Microsoft Office Suite, programming tools, and educational software aligned with the Competency-Based Curriculum. The lab also features a smart board and projector for interactive lessons. "This investment reflects our commitment to preparing students for the digital economy," said the ICT Coordinator. All students will have scheduled lab time each week, and the lab will also be open for evening study for boarding students.'
+  }
+];
+
+function renderNews() {
+  const container = document.getElementById('newsContainer');
+  container.innerHTML = newsArticles.map(a => `
+    <article class="news-article reveal">
+      <div class="news-article-img">
+        <img src="${a.img}" alt="${a.title}" loading="lazy" onerror="this.src='../hero_classroom.png'" />
+      </div>
+      <div class="news-article-body">
+        <span class="news-article-cat">${a.cat}</span>
+        <h2 class="news-article-title">${a.title}</h2>
+        <div class="news-article-meta">
+          <span><i class="fas fa-calendar"></i> ${a.date}</span>
+          <span><i class="fas fa-user"></i> ${a.author}</span>
+        </div>
+        <p class="news-article-text">${a.text}</p>
+      </div>
+    </article>
+  `).join('');
+}
+
+renderNews();
+</script>
+</body>
+</html>

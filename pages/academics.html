@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Academic programs at St. John Paul II Secondary School Nakuwadde — O-Level, A-Level, ICT, Vocational Education, and the Competency-Based Curriculum." />
+  <title>Academics | St. John Paul II Secondary School Nakuwadde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero { background:linear-gradient(135deg,var(--royal-blue) 0%,#0D2D8A 60%,#0A2060 100%); padding:120px 0 70px; position:relative; overflow:hidden; }
+    .page-hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:60px; background:var(--white); clip-path:ellipse(55% 100% at 50% 100%); }
+    .page-hero-title { font-family:var(--font-display); font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--white); margin-bottom:12px; }
+    .page-hero-sub { color:rgba(255,255,255,0.8); font-size:1.05rem; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:0.82rem; color:rgba(255,255,255,0.7); margin-bottom:20px; }
+    .breadcrumb a { color:var(--gold-light); } .breadcrumb span { color:rgba(255,255,255,0.5); }
+
+    .program-banner {
+      background: linear-gradient(135deg, var(--royal-blue), var(--blue-light));
+      border-radius: var(--radius-xl);
+      padding: 40px;
+      color: var(--white);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      margin-bottom: 40px;
+    }
+    .program-banner-title { font-family:var(--font-display); font-size:1.6rem; font-weight:700; margin-bottom:8px; }
+    .program-banner-desc { color:rgba(255,255,255,0.85); font-size:0.95rem; line-height:1.7; }
+    .program-banner-badge { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:var(--radius); padding:16px 24px; text-align:center; flex-shrink:0; }
+    .program-banner-badge .num { font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--gold-light); display:block; }
+    .program-banner-badge .lbl { font-size:0.78rem; opacity:0.85; }
+
+    .subject-table { width:100%; border-collapse:collapse; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
+    .subject-table th { background:var(--royal-blue); color:var(--white); padding:14px 20px; font-family:var(--font-ui); font-size:0.85rem; font-weight:700; text-align:left; }
+    .subject-table td { padding:12px 20px; border-bottom:1px solid var(--gray-100); font-size:0.88rem; color:var(--gray-700); }
+    .subject-table tr:last-child td { border-bottom:none; }
+    .subject-table tr:nth-child(even) td { background:var(--off-white); }
+    .subject-table tr:hover td { background:var(--blue-pale); }
+    .badge-core { background:var(--royal-blue); color:var(--white); font-size:0.7rem; padding:2px 8px; border-radius:var(--radius-full); font-weight:600; }
+    .badge-elective { background:var(--gold); color:var(--white); font-size:0.7rem; padding:2px 8px; border-radius:var(--radius-full); font-weight:600; }
+
+    .cbc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
+    .cbc-card { background:var(--white); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--gray-200); transition:var(--transition); }
+    .cbc-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:var(--royal-blue); }
+    .cbc-num { font-family:var(--font-display); font-size:3rem; font-weight:800; color:var(--blue-pale); line-height:1; margin-bottom:10px; }
+    .cbc-title { font-family:var(--font-display); font-weight:700; color:var(--royal-blue); margin-bottom:8px; }
+    .cbc-desc { font-size:0.88rem; color:var(--gray-600); line-height:1.7; }
+  </style>
+</head>
+<body>
+
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="tel:+256703222657"><i class="fas fa-phone"></i> +256 703 222 657</a>
+      <a href="tel:+256757754429"><i class="fas fa-phone"></i> +256 757 754 429</a>
+    </div>
+    <div class="top-bar-right">
+      <span><i class="fas fa-map-marker-alt"></i> Nakuwadde, Bulenga, Wakiso District</span>
+      <div class="top-bar-social">
+        <a href="https://www.facebook.com/groups/stjohnpaulss" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/256703222657" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<header class="header" id="header">
+  <div class="container">
+    <nav class="navbar">
+      <a href="../index.html" class="nav-brand">
+        <img src="../school_logo.png" alt="St. John Paul II SS Logo" class="nav-logo" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">St. John Paul II Secondary School</span>
+          <span class="nav-brand-motto">"A Creative Space for a Mind"</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+        <li class="nav-item"><a href="academics.html" class="nav-link active">Academics</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="news.html" class="nav-link">News &amp; Events</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="admissions.html" class="btn btn-gold btn-sm nav-cta">Apply Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Academics</span></div>
+    <h1 class="page-hero-title">Academic Programs</h1>
+    <p class="page-hero-sub">A rigorous, creative, competency-based education from Senior One to Senior Six.</p>
+  </div>
+</div>
+
+<!-- LOWER SECONDARY -->
+<section class="section-py" id="lower" style="background:var(--white);">
+  <div class="container">
+    <div class="program-banner reveal">
+      <div>
+        <div class="program-banner-title">Lower Secondary — Senior 1 to Senior 4</div>
+        <div class="program-banner-desc">Uganda's Competency-Based Curriculum (CBC) prepares students with practical knowledge, critical thinking, and life skills through an integrated, learner-centred approach. Students develop a broad foundation before specialising at A-Level.</div>
+      </div>
+      <div class="program-banner-badge">
+        <span class="num">4</span>
+        <span class="lbl">Years of Study</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;" class="reveal">
+      <div>
+        <h3 style="font-family:var(--font-display);color:var(--royal-blue);margin-bottom:16px;font-size:1.2rem;">Core Subjects (All Students)</h3>
+        <table class="subject-table">
+          <thead><tr><th>Subject</th><th>Level</th><th>Type</th></tr></thead>
+          <tbody>
+            <tr><td>English Language</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Mathematics</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Biology</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Chemistry</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Physics</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>History</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Geography</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Religious Education</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-display);color:var(--royal-blue);margin-bottom:16px;font-size:1.2rem;">Elective &amp; Practical Subjects</h3>
+        <table class="subject-table">
+          <thead><tr><th>Subject</th><th>Level</th><th>Type</th></tr></thead>
+          <tbody>
+            <tr><td>Computer Studies</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Agriculture</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Entrepreneurship</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Fine Art &amp; Design</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Music</td><td>S1 – S3</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Literature in English</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Home Economics</td><td>S1 – S3</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Technical Drawing</td><td>S1 – S3</td><td><span class="badge-elective">Elective</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- UPPER SECONDARY -->
+<section class="section-py" id="upper" style="background:var(--off-white);">
+  <div class="container">
+    <div class="program-banner reveal" style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));">
+      <div>
+        <div class="program-banner-title">Upper Secondary — Senior 5 &amp; Senior 6</div>
+        <div class="program-banner-desc">A-Level prepares students for the Uganda Advanced Certificate of Education (UACE) and university entrance. Students choose principal subjects and subsidiaries based on their future career path.</div>
+      </div>
+      <div class="program-banner-badge">
+        <span class="num">2</span>
+        <span class="lbl">Years of Study</span>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:30px;" class="reveal">
+      <div>
+        <h3 style="font-family:var(--font-display);color:var(--royal-blue);margin-bottom:16px;font-size:1.2rem;">Sciences Combinations</h3>
+        <table class="subject-table">
+          <thead><tr><th>Combination</th><th>Principal Subjects</th></tr></thead>
+          <tbody>
+            <tr><td><strong>PCB</strong></td><td>Physics, Chemistry, Biology</td></tr>
+            <tr><td><strong>PCM</strong></td><td>Physics, Chemistry, Mathematics</td></tr>
+            <tr><td><strong>BCA</strong></td><td>Biology, Chemistry, Agriculture</td></tr>
+            <tr><td><strong>PME</strong></td><td>Physics, Math, Economics</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="font-family:var(--font-display);color:var(--royal-blue);margin-bottom:16px;font-size:1.2rem;">Arts Combinations</h3>
+        <table class="subject-table">
+          <thead><tr><th>Combination</th><th>Principal Subjects</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HEG</strong></td><td>History, Economics, Geography</td></tr>
+            <tr><td><strong>LHD</strong></td><td>Literature, History, Divinity</td></tr>
+            <tr><td><strong>EBS</strong></td><td>Entrepreneurship &amp; Business Studies</td></tr>
+            <tr><td><strong>Art</strong></td><td>Art, Design &amp; Technology</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    <div style="margin-top:24px;" class="reveal">
+      <h3 style="font-family:var(--font-display);color:var(--royal-blue);margin-bottom:16px;font-size:1.2rem;">Subsidiary Subjects (All A-Level Students)</h3>
+      <table class="subject-table">
+        <thead><tr><th>Subject</th><th>All Students</th><th>Notes</th></tr></thead>
+        <tbody>
+          <tr><td>General Paper (GP)</td><td>✅ Compulsory</td><td>Critical thinking, current affairs, essay writing</td></tr>
+          <tr><td>Mathematics (Subsidiary)</td><td>For Science students</td><td>Advanced mathematics to support science combinations</td></tr>
+          <tr><td>Computer Studies (Subsidiary)</td><td>Optional</td><td>Digital literacy and programming fundamentals</td></tr>
+          <tr><td>Entrepreneurship (Subsidiary)</td><td>Optional</td><td>Business planning and financial literacy</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ICT -->
+<section class="section-py" id="ict" style="background:var(--white);">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="badge"><i class="fas fa-laptop"></i> ICT Integration</span>
+      <h2 class="section-title">Technology-Powered Learning</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Our dedicated computer lab and ICT programs prepare students for the digital economy of the 21st century.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center;">
+      <div class="reveal-left">
+        <img src="../hero_classroom.png" alt="Computer Lab at St. John Paul II SS" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);width:100%;aspect-ratio:4/3;object-fit:cover;" loading="lazy" />
+      </div>
+      <div class="reveal-right">
+        <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--royal-blue);margin-bottom:20px;">What Students Learn in Our Computer Lab</h3>
+        <div style="display:flex;flex-direction:column;gap:12px;">
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--royal-blue);">
+            <div style="font-size:1.3rem;">💻</div>
+            <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Computer Fundamentals</div><div style="font-size:0.85rem;color:var(--gray-600);">Hardware, software, operating systems, Microsoft Office Suite</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--gold);">
+            <div style="font-size:1.3rem;">🌐</div>
+            <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Internet &amp; Research</div><div style="font-size:0.85rem;color:var(--gray-600);">Online research, email communication, digital safety</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--royal-blue);">
+            <div style="font-size:1.3rem;">📊</div>
+            <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Data &amp; Spreadsheets</div><div style="font-size:0.85rem;color:var(--gray-600);">Excel, data analysis, charts, and database management</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--gold);">
+            <div style="font-size:1.3rem;">🎨</div>
+            <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Graphic Design &amp; Presentation</div><div style="font-size:0.85rem;color:var(--gray-600);">PowerPoint, basic graphic design tools, digital creativity</div></div>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--royal-blue);">
+            <div style="font-size:1.3rem;">🤖</div>
+            <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Coding &amp; Web Basics</div><div style="font-size:0.85rem;color:var(--gray-600);">Introduction to programming, HTML basics, problem solving</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CBC -->
+<section class="section-py" id="cbc" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="badge"><i class="fas fa-star"></i> CBC Approach</span>
+      <h2 class="section-title">Competency-Based Curriculum</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Uganda's modern CBC framework shifts focus from rote memorisation to developing real-world skills and competencies.</p>
+    </div>
+    <div class="cbc-grid">
+      <div class="cbc-card reveal"><div class="cbc-num">01</div><h3 class="cbc-title">Critical Thinking</h3><p class="cbc-desc">Students learn to analyse, evaluate, and synthesise information to make informed decisions and solve complex real-world problems.</p></div>
+      <div class="cbc-card reveal"><div class="cbc-num">02</div><h3 class="cbc-title">Creativity &amp; Innovation</h3><p class="cbc-desc">Through project-based learning, design thinking, and entrepreneurship, students develop creative approaches to challenges.</p></div>
+      <div class="cbc-card reveal"><div class="cbc-num">03</div><h3 class="cbc-title">Communication</h3><p class="cbc-desc">English literacy, debate, presentations, and written communication skills essential for leadership and professional life.</p></div>
+      <div class="cbc-card reveal"><div class="cbc-num">04</div><h3 class="cbc-title">Collaboration</h3><p class="cbc-desc">Group work, team projects, and community service build the interpersonal and teamwork skills employers and universities value.</p></div>
+      <div class="cbc-card reveal"><div class="cbc-num">05</div><h3 class="cbc-title">Digital Citizenship</h3><p class="cbc-desc">Responsible, ethical, and skilled use of technology in academic work, communication, and entrepreneurship.</p></div>
+      <div class="cbc-card reveal"><div class="cbc-num">06</div><h3 class="cbc-title">Self-Management</h3><p class="cbc-desc">Discipline, time management, resilience, and goal-setting skills that students carry with them through life.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- VOCATIONAL LINK -->
+<section style="background:linear-gradient(135deg,var(--royal-blue),var(--blue-light));padding:60px 0;">
+  <div class="container" style="text-align:center;">
+    <h2 style="font-family:var(--font-display);font-size:1.8rem;color:var(--white);margin-bottom:12px;">Explore Our Vocational Programs</h2>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:28px;max-width:550px;margin-left:auto;margin-right:auto;">Agriculture, ICT, Tailoring, Carpentry, Entrepreneurship &amp; more — practical skills that create real opportunity.</p>
+    <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
+      <a href="../index.html#vocational" class="btn btn-gold">View Vocational Programs</a>
+      <a href="admissions.html" class="btn btn-outline">Apply Now</a>
+    </div>
+  </div>
+</section>
+
+<div style="background:var(--royal-blue);color:rgba(255,255,255,0.8);text-align:center;padding:20px;font-family:var(--font-ui);font-size:0.85rem;">
+  © 2026 St. John Paul II Secondary Mixed Day &amp; Boarding School, Nakuwadde. |
+  <a href="../index.html" style="color:var(--gold-light);">Home</a> ·
+  <a href="admissions.html" style="color:var(--gold-light);">Apply Now</a> ·
+  <a href="contact.html" style="color:var(--gold-light);">Contact Us</a>
+</div>
+
+<a href="https://wa.me/256703222657" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+<script src="../js/script.js"></script>
+</body>
+</html>

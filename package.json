@@ -1,0 +1,12 @@
+{
+  "name": "st-john-paul-ii-nakuwadde",
+  "version": "1.0.0",
+  "private": true,
+  "description": "St. John Paul II Secondary School Nakuwadde - Official Website",
+  "scripts": {
+    "dev": "npx serve ."
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0"
+  }
+}

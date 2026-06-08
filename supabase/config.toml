@@ -1,0 +1,14 @@
+[project]
+name = "st-john-paul-ii-nakuwadde"
+id = ""
+
+[auth]
+enabled = true
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public"]
+
+[db]
+migration_dirs = ["supabase/migrations"]

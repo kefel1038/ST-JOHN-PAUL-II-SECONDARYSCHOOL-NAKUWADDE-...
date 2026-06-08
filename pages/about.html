@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="About St. John Paul II Secondary School Nakuwadde — Our history, vision, mission, headteacher's message, and staff directory." />
+  <title>About Us | St. John Paul II Secondary School Nakuwadde</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../css/style.css" />
+  <style>
+    .page-hero {
+      background: linear-gradient(135deg, var(--royal-blue) 0%, #0D2D8A 60%, #0A2060 100%);
+      padding: 120px 0 70px;
+      position: relative;
+      overflow: hidden;
+    }
+    .page-hero::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 60px;
+      background: var(--white);
+      clip-path: ellipse(55% 100% at 50% 100%);
+    }
+    .page-hero-title { font-family: var(--font-display); font-size: clamp(2rem,4vw,3rem); font-weight:800; color:var(--white); margin-bottom:12px; }
+    .page-hero-sub { color: rgba(255,255,255,0.8); font-size:1.05rem; }
+    .breadcrumb { display:flex; align-items:center; gap:8px; font-size:0.82rem; color:rgba(255,255,255,0.7); margin-bottom:20px; }
+    .breadcrumb a { color:var(--gold-light); } .breadcrumb span { color:rgba(255,255,255,0.5); }
+
+    .values-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(220px,1fr)); gap:24px; margin-top:40px; }
+    .value-card { background:var(--white); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--gray-200); text-align:center; transition:var(--transition); }
+    .value-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:var(--gold); }
+    .value-icon { font-size:2.5rem; margin-bottom:14px; }
+    .value-title { font-family:var(--font-display); font-weight:700; color:var(--royal-blue); margin-bottom:8px; }
+    .value-desc { font-size:0.85rem; color:var(--gray-600); line-height:1.6; }
+
+    .staff-grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(220px,1fr)); gap:24px; }
+    .staff-card { background:var(--white); border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-sm); border:1px solid var(--gray-200); transition:var(--transition); text-align:center; }
+    .staff-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-xl); }
+    .staff-photo { height:200px; background:linear-gradient(135deg,var(--royal-blue),var(--blue-light)); display:flex; align-items:center; justify-content:center; font-size:4rem; color:rgba(255,255,255,0.3); }
+    .staff-photo img { width:100%; height:100%; object-fit:cover; }
+    .staff-info { padding:18px; }
+    .staff-name { font-family:var(--font-ui); font-weight:700; color:var(--royal-blue); margin-bottom:4px; }
+    .staff-role { font-size:0.8rem; color:var(--gray-500); }
+    .staff-subject { font-size:0.78rem; color:var(--gold-dark); font-weight:600; margin-top:4px; }
+
+    .timeline { position:relative; padding-left:40px; }
+    .timeline::before { content:''; position:absolute; left:10px; top:0; bottom:0; width:2px; background:var(--gray-200); }
+    .timeline-item { position:relative; margin-bottom:36px; }
+    .timeline-dot { position:absolute; left:-34px; top:4px; width:16px; height:16px; border-radius:50%; background:var(--gold); border:3px solid var(--white); box-shadow:0 0 0 2px var(--gold); }
+    .timeline-year { font-family:var(--font-ui); font-weight:700; font-size:0.8rem; color:var(--gold-dark); text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px; }
+    .timeline-title { font-family:var(--font-display); font-weight:700; color:var(--royal-blue); margin-bottom:6px; }
+    .timeline-desc { font-size:0.9rem; color:var(--gray-600); line-height:1.7; }
+  </style>
+</head>
+<body>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="container">
+    <div class="top-bar-left">
+      <a href="tel:+256703222657"><i class="fas fa-phone"></i> +256 703 222 657</a>
+      <a href="tel:+256757754429"><i class="fas fa-phone"></i> +256 757 754 429</a>
+    </div>
+    <div class="top-bar-right">
+      <span><i class="fas fa-map-marker-alt"></i> Nakuwadde, Bulenga, Wakiso District</span>
+      <div class="top-bar-social">
+        <a href="https://www.facebook.com/groups/stjohnpaulss" target="_blank"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://wa.me/256703222657" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- HEADER -->
+<header class="header" id="header">
+  <div class="container">
+    <nav class="navbar">
+      <a href="../index.html" class="nav-brand">
+        <img src="../school_logo.png" alt="St. John Paul II SS Logo" class="nav-logo" />
+        <div class="nav-brand-text">
+          <span class="nav-brand-name">St. John Paul II Secondary School</span>
+          <span class="nav-brand-motto">"A Creative Space for a Mind"</span>
+        </div>
+      </a>
+      <ul class="nav-menu" id="navMenu">
+        <li class="nav-item"><a href="../index.html" class="nav-link">Home</a></li>
+        <li class="nav-item"><a href="about.html" class="nav-link active">About</a></li>
+        <li class="nav-item"><a href="academics.html" class="nav-link">Academics</a></li>
+        <li class="nav-item"><a href="gallery.html" class="nav-link">Gallery</a></li>
+        <li class="nav-item"><a href="news.html" class="nav-link">News &amp; Events</a></li>
+        <li class="nav-item"><a href="admissions.html" class="nav-link">Admissions</a></li>
+        <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+      </ul>
+      <a href="admissions.html" class="btn btn-gold btn-sm nav-cta">Apply Now</a>
+      <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+    </nav>
+  </div>
+</header>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="container">
+    <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>About Us</span></div>
+    <h1 class="page-hero-title">About Our School</h1>
+    <p class="page-hero-sub">Discover our story, our vision, and the dedicated community behind St. John Paul II Secondary School.</p>
+  </div>
+</div>
+
+<!-- WHO WE ARE -->
+<section class="section-py" id="who-we-are" style="background:var(--white);">
+  <div class="container">
+    <div class="about-grid">
+      <div class="about-image-cluster reveal-left">
+        <div class="about-image-main">
+          <img src="../img/school_assembly.jpg" alt="Students in school assembly" loading="lazy" onerror="this.src='../hero_classroom.png'" />
+        </div>
+      </div>
+      <div class="about-content reveal-right">
+        <span class="badge"><i class="fas fa-school"></i> Who We Are</span>
+        <h2 class="section-title">Building Tomorrow's Leaders Today</h2>
+        <p style="color:var(--gray-600);line-height:1.8;margin-bottom:16px;">
+          St. John Paul II Secondary School Nakuwadde is a community-based mixed day and boarding secondary school dedicated to nurturing learners into responsible, skilled, and morally upright citizens of Uganda and the world.
+        </p>
+        <p style="color:var(--gray-600);line-height:1.8;margin-bottom:16px;">
+          Founded on Catholic values and open to learners of all faiths, the school provides quality education that combines academic excellence, vocational training, leadership development, and character formation. We are proudly located at Nakuwadde, near Bulenga Trading Centre on the Kampala-Mityana Road, Wakiso District.
+        </p>
+        <p style="color:var(--gray-600);line-height:1.8;margin-bottom:28px;">
+          Named in honour of Pope St. John Paul II — a global champion of youth, education, and human dignity — our school carries forward his legacy of faith-driven excellence. We believe that every child, regardless of background, deserves access to quality education that shapes their character and unlocks their God-given potential.
+        </p>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+          <div style="padding:16px;background:var(--blue-pale);border-radius:var(--radius);border-left:3px solid var(--royal-blue);">
+            <div style="font-weight:700;color:var(--royal-blue);margin-bottom:4px;">🎯 Our Vision</div>
+            <div style="font-size:0.85rem;color:var(--gray-600);">To be a centre of academic excellence, character formation and vocational training that produces responsible and innovative citizens.</div>
+          </div>
+          <div style="padding:16px;background:rgba(201,168,76,0.08);border-radius:var(--radius);border-left:3px solid var(--gold);">
+            <div style="font-weight:700;color:var(--gold-dark);margin-bottom:4px;">🌟 Our Mission</div>
+            <div style="font-size:0.85rem;color:var(--gray-600);">To provide holistic, affordable, and quality education that nurtures academic excellence, practical skills, moral values, and spiritual growth.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CORE VALUES -->
+<section class="section-py" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="badge"><i class="fas fa-heart"></i> Core Values</span>
+      <h2 class="section-title">What We Stand For</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Our six core values guide every aspect of school life — from how we teach to how we treat one another.</p>
+    </div>
+    <div class="values-grid">
+      <div class="value-card reveal"><div class="value-icon">✝️</div><h3 class="value-title">Faith</h3><p class="value-desc">Grounded in Catholic tradition, nurturing spiritual development for all faiths in an inclusive environment.</p></div>
+      <div class="value-card reveal"><div class="value-icon">🎓</div><h3 class="value-title">Excellence</h3><p class="value-desc">Pursuing the highest standards in academics, vocational skills, sports, and all areas of school life.</p></div>
+      <div class="value-card reveal"><div class="value-icon">💡</div><h3 class="value-title">Innovation</h3><p class="value-desc">Encouraging creativity, critical thinking, and entrepreneurial spirit in everything we do.</p></div>
+      <div class="value-card reveal"><div class="value-icon">🤝</div><h3 class="value-title">Service</h3><p class="value-desc">Cultivating a culture of community service, compassion, and responsibility toward others.</p></div>
+      <div class="value-card reveal"><div class="value-icon">⚖️</div><h3 class="value-title">Integrity</h3><p class="value-desc">Building honest, trustworthy, and disciplined young people who uphold truth in all they do.</p></div>
+      <div class="value-card reveal"><div class="value-icon">🌍</div><h3 class="value-title">Community</h3><p class="value-desc">Fostering a strong sense of belonging, unity, and shared purpose among students, staff, and families.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- HEADTEACHER -->
+<section class="headteacher-section section-py" id="headteacher">
+  <div class="container">
+    <div class="headteacher-grid">
+      <div class="headteacher-photo-wrap reveal-left">
+        <img src="../headteacher_portrait.png" alt="Headteacher — St. John Paul II SS Nakuwadde" class="headteacher-photo" loading="lazy" />
+        <div class="headteacher-name-card">
+          <span class="name">The Headteacher</span>
+          <span class="title-text">St. John Paul II Secondary School</span>
+        </div>
+      </div>
+      <div class="headteacher-message reveal-right">
+        <span class="badge" style="color:var(--gold-light);border-color:rgba(201,168,76,0.3);background:rgba(201,168,76,0.1);"><i class="fas fa-quote-left"></i> Headteacher's Message</span>
+        <h2 class="section-title" style="color:var(--white);">A Message of Vision &amp; Purpose</h2>
+        <div class="message-quote">"</div>
+        <p class="message-text">Dear Parents, Guardians, and Beloved Students,</p>
+        <p class="message-text">Welcome to St. John Paul II Secondary School Nakuwadde — a place where every learner is valued, nurtured, and empowered to achieve their fullest potential. Our school is more than an institution of learning; it is a community where academic excellence, discipline, creativity, and strong moral values are woven into the very fabric of daily life.</p>
+        <p class="message-text">We believe that education must prepare young people not only to pass examinations, but to contribute meaningfully to their families, communities, and nation. Through our unique blend of quality academics, vocational training, leadership programs, and spiritual formation, we are raising Uganda's next generation of leaders and innovators.</p>
+        <p class="message-text">Our dedicated team of teachers, support staff, and community partners work tirelessly to ensure that every student receives individual attention and the support they need to succeed. I am deeply proud of our students, our staff, and the remarkable community that makes this school truly special.</p>
+        <p class="message-text">I invite you to explore our website, visit our campus, and discover why St. John Paul II Secondary School is the right choice for your child's future. Together, let us build a better tomorrow — one student at a time.</p>
+        <div class="message-author"><div class="message-author-line"></div><div><div class="message-author-name">The Headteacher</div><div class="message-author-title">St. John Paul II Secondary School, Nakuwadde</div></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SCHOOL HISTORY -->
+<section class="section-py" id="history" style="background:var(--white);">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="badge"><i class="fas fa-history"></i> Our History</span>
+      <h2 class="section-title">Our Journey of Growth</h2>
+      <p class="section-subtitle">From humble beginnings to a thriving educational community — the story of St. John Paul II SS Nakuwadde.</p>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;">
+      <div class="timeline reveal-left">
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2016</div>
+          <div class="timeline-title">Foundation</div>
+          <div class="timeline-desc">St. John Paul II Secondary School was established by the local Catholic community of Nakuwadde to provide quality secondary education to children in the area along the Kampala-Mityana Road.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2017</div>
+          <div class="timeline-title">First Students Enrolled</div>
+          <div class="timeline-desc">The school welcomed its pioneer class of students in Senior One, beginning the journey of academic excellence that continues to grow each year.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2019</div>
+          <div class="timeline-title">Government Recognition</div>
+          <div class="timeline-desc">The school received full recognition and accreditation from the Uganda National Examinations Board (UNEB) and Ministry of Education, enabling students to sit national examinations.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2020</div>
+          <div class="timeline-title">Vocational Programs Launched</div>
+          <div class="timeline-desc">The school launched its unique vocational education department offering Agriculture, ICT, Tailoring, and Entrepreneurship, setting it apart from other schools in the region.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2022</div>
+          <div class="timeline-title">First UCE Graduates</div>
+          <div class="timeline-desc">Our pioneer Senior Four class sat the Uganda Certificate of Education exams with impressive results, many proceeding to upper secondary and tertiary institutions.</div>
+        </div>
+        <div class="timeline-item">
+          <div class="timeline-dot"></div>
+          <div class="timeline-year">2024–Present</div>
+          <div class="timeline-title">Expansion &amp; Excellence</div>
+          <div class="timeline-desc">New computer lab, expanded dormitory facilities, and additional vocational workshops. The school continues to grow in enrollment, programs, and academic achievement.</div>
+        </div>
+      </div>
+      <div class="reveal-right">
+        <img src="../img/school_assembly.jpg" alt="School history" style="border-radius:var(--radius-lg);box-shadow:var(--shadow-xl);width:100%;object-fit:cover;aspect-ratio:4/3;" onerror="this.src='../hero_classroom.png'" loading="lazy" />
+        <div style="background:linear-gradient(135deg,var(--royal-blue),var(--blue-light));color:var(--white);padding:24px;border-radius:var(--radius-lg);margin-top:24px;">
+          <div style="font-family:var(--font-display);font-size:1.3rem;font-weight:700;margin-bottom:12px;">School Quick Facts</div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;">
+            <div><span style="color:var(--gold-light);font-weight:700;">📅 Founded:</span><span style="margin-left:6px;font-size:0.9rem;">2016</span></div>
+            <div><span style="color:var(--gold-light);font-weight:700;">📍 District:</span><span style="margin-left:6px;font-size:0.9rem;">Wakiso</span></div>
+            <div><span style="color:var(--gold-light);font-weight:700;">👥 Students:</span><span style="margin-left:6px;font-size:0.9rem;">800+</span></div>
+            <div><span style="color:var(--gold-light);font-weight:700;">👨‍🏫 Staff:</span><span style="margin-left:6px;font-size:0.9rem;">45+ Teachers</span></div>
+            <div><span style="color:var(--gold-light);font-weight:700;">🏫 Classes:</span><span style="margin-left:6px;font-size:0.9rem;">S1 – S6</span></div>
+            <div><span style="color:var(--gold-light);font-weight:700;">🏠 Type:</span><span style="margin-left:6px;font-size:0.9rem;">Day &amp; Boarding</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STAFF DIRECTORY -->
+<section class="section-py" id="staff" style="background:var(--off-white);">
+  <div class="container">
+    <div class="section-header text-center reveal">
+      <span class="badge"><i class="fas fa-users"></i> Our Team</span>
+      <h2 class="section-title">Meet Our Dedicated Staff</h2>
+      <p class="section-subtitle" style="margin:0 auto;">Our qualified, passionate educators are the heart of St. John Paul II Secondary School.</p>
+    </div>
+    <div class="staff-grid">
+      <div class="staff-card reveal"><div class="staff-photo">👨‍💼</div><div class="staff-info"><div class="staff-name">The Headteacher</div><div class="staff-role">School Administration</div><div class="staff-subject">School Leadership</div></div></div>
+      <div class="staff-card reveal"><div class="staff-photo">👩‍🏫</div><div class="staff-info"><div class="staff-name">Deputy Headteacher</div><div class="staff-role">Academic Affairs</div><div class="staff-subject">Academic Coordination</div></div></div>
+      <div class="staff-card reveal"><div class="staff-photo">👨‍🔬</div><div class="staff-info"><div class="staff-name">HOD Sciences</div><div class="staff-role">Head of Department</div><div class="staff-subject">Physics &amp; Chemistry</div></div></div>
+      <div class="staff-card reveal"><div class="staff-photo">👩‍💻</div><div class="staff-info"><div class="staff-name">ICT Coordinator</div><div class="staff-role">Technology &amp; Innovation</div><div class="staff-subject">Computer Studies</div></div></div>
+      <div class="staff-card reveal"><div class="staff-photo">👨‍🌾</div><div class="staff-info"><div class="staff-name">Vocational Head</div><div class="staff-role">Vocational Education</div><div class="staff-subject">Agriculture &amp; Skills</div></div></div>
+      <div class="staff-card reveal"><div class="staff-photo">⛪</div><div class="staff-info"><div class="staff-name">School Chaplain</div><div class="staff-role">Spiritual Formation</div><div class="staff-subject">Religious Education</div></div></div>
+      <div class="staff-card reveal"><div class="staff-photo">👩‍⚕️</div><div class="staff-info"><div class="staff-name">School Counselor</div><div class="staff-role">Guidance &amp; Counseling</div><div class="staff-subject">Student Welfare</div></div></div>
+      <div class="staff-card reveal"><div class="staff-photo">⚽</div><div class="staff-info"><div class="staff-name">Sports Master</div><div class="staff-role">Physical Education</div><div class="staff-subject">Sports &amp; Athletics</div></div></div>
+    </div>
+    <div style="text-align:center;margin-top:40px;">
+      <a href="contact.html" class="btn btn-primary">Contact Our Administration</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER STRIP -->
+<div style="background:var(--royal-blue);color:rgba(255,255,255,0.8);text-align:center;padding:20px;font-family:var(--font-ui);font-size:0.85rem;">
+  © 2026 St. John Paul II Secondary Mixed Day &amp; Boarding School, Nakuwadde. | 
+  <a href="../index.html" style="color:var(--gold-light);">Home</a> · 
+  <a href="admissions.html" style="color:var(--gold-light);">Apply Now</a> · 
+  <a href="contact.html" style="color:var(--gold-light);">Contact Us</a>
+</div>
+
+<a href="https://wa.me/256703222657" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+<script src="../js/script.js"></script>
+</body>
+</html>
