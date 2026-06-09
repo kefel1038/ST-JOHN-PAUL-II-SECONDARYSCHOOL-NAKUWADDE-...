@@ -225,7 +225,7 @@ const galleryImages = [
   { src: 'img/spkg mi.webp', caption: 'Student Public Speaking', cat: 'academics' },
   { src: 'img/st para2.webp', caption: 'School Parade', cat: 'events' },
   { src: 'img/school compound.jpg', caption: 'School Compound — Beautiful Campus Views', cat: 'events' },
-  { src: 'img/School logo.jpeg', caption: 'St. John Paul II School Logo', cat: 'events' },
+  { src: 'img/School logo.jpeg', caption: 'St. John Paul II Day & Boarding School Nakuwadde - Bulenga Logo', cat: 'events' },
   { src: 'img/library Image2.jpg', caption: 'School Library — A Space for Learning', cat: 'academics' },
 ];
 
@@ -472,6 +472,6 @@ window.addEventListener('scroll', () => {
   });
 });
 
-console.log('%c🎓 St. John Paul II Secondary School Nakuwadde', 'color:#0A2472;font-size:18px;font-weight:bold;');
+console.log('%c🎓 St. John Paul II Day & Boarding Secondary School Nakuwadde - Bulenga', 'color:#0A2472;font-size:18px;font-weight:bold;');
 console.log('%c"A Creative Space for a Mind"', 'color:#C9A84C;font-size:14px;font-style:italic;');
 console.log('%cWebsite powered by modern web technology. Admissions: +256 703 262 686', 'color:#64748B;font-size:12px;');
