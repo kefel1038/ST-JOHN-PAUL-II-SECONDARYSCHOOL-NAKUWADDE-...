@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Academic programs at St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga — O-Level, A-Level, ICT, Vocational Education, and the Competency-Based Curriculum." />
+  <meta name="description" content="Academic programs at St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga â€” O-Level, A-Level, ICT, Vocational Education, and the Competency-Based Curriculum." />
   <title>Academics | St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -11,15 +11,16 @@
   <link rel="stylesheet" href="../css/style.css" />
 
   <style>
-    .page-hero { background:linear-gradient(135deg,var(--royal-blue) 0%,#0D2D8A 60%,#0A2060 100%); padding:120px 0 70px; position:relative; overflow:hidden; }
+    .page-hero { background:linear-gradient(135deg, var(--deep-navy) 0%, var(--royal-blue) 60%, #001F3F 100%); padding:120px 0 70px; position:relative; overflow:hidden; }
     .page-hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:60px; background:var(--white); clip-path:ellipse(55% 100% at 50% 100%); }
     .page-hero-title { font-family:var(--font-display); font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--white); margin-bottom:12px; }
     .page-hero-sub { color:rgba(255,255,255,0.8); font-size:1.05rem; }
     .breadcrumb { display:flex; align-items:center; gap:8px; font-size:0.82rem; color:rgba(255,255,255,0.7); margin-bottom:20px; }
-    .breadcrumb a { color:var(--gold-light); } .breadcrumb span { color:rgba(255,255,255,0.5); }
+    
+    .gold-divider { width:70px; height:4px; background:var(--gold); border-radius:2px; margin-bottom:20px; }
 
     .program-banner {
-      background: linear-gradient(135deg, var(--royal-blue), var(--blue-light));
+      background: linear-gradient(135deg, var(--royal-blue), #0055A0);
       border-radius: var(--radius-xl);
       padding: 40px;
       color: var(--white);
@@ -32,7 +33,7 @@
     .program-banner-title { font-family:var(--font-display); font-size:1.6rem; font-weight:700; margin-bottom:8px; }
     .program-banner-desc { color:rgba(255,255,255,0.85); font-size:0.95rem; line-height:1.7; }
     .program-banner-badge { background:rgba(255,255,255,0.15); border:1px solid rgba(255,255,255,0.3); border-radius:var(--radius); padding:16px 24px; text-align:center; flex-shrink:0; }
-    .program-banner-badge .num { font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--gold-light); display:block; }
+    .program-banner-badge .num { font-family:var(--font-display); font-size:2.5rem; font-weight:800; color:var(--gold); display:block; }
     .program-banner-badge .lbl { font-size:0.78rem; opacity:0.85; }
 
     .subject-table { width:100%; border-collapse:collapse; border-radius:var(--radius-lg); overflow:hidden; box-shadow:var(--shadow-md); }
@@ -40,14 +41,14 @@
     .subject-table td { padding:12px 20px; border-bottom:1px solid var(--gray-100); font-size:0.88rem; color:var(--gray-700); }
     .subject-table tr:last-child td { border-bottom:none; }
     .subject-table tr:nth-child(even) td { background:var(--off-white); }
-    .subject-table tr:hover td { background:var(--blue-pale); }
+    .subject-table tr:hover td { background:rgba(0,58,112,0.06); }
     .badge-core { background:var(--royal-blue); color:var(--white); font-size:0.7rem; padding:2px 8px; border-radius:var(--radius-full); font-weight:600; }
     .badge-elective { background:var(--gold); color:var(--white); font-size:0.7rem; padding:2px 8px; border-radius:var(--radius-full); font-weight:600; }
 
     .cbc-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:24px; }
     .cbc-card { background:var(--white); border-radius:var(--radius-lg); padding:28px; border:1px solid var(--gray-200); transition:var(--transition); }
     .cbc-card:hover { transform:translateY(-6px); box-shadow:var(--shadow-lg); border-color:var(--royal-blue); }
-    .cbc-num { font-family:var(--font-display); font-size:3rem; font-weight:800; color:var(--blue-pale); line-height:1; margin-bottom:10px; }
+    .cbc-num { font-family:var(--font-display); font-size:3rem; font-weight:800; color:rgba(0,58,112,0.06); line-height:1; margin-bottom:10px; }
     .cbc-title { font-family:var(--font-display); font-weight:700; color:var(--royal-blue); margin-bottom:8px; }
     .cbc-desc { font-size:0.88rem; color:var(--gray-600); line-height:1.7; }
   </style>
@@ -98,6 +99,7 @@
 <div class="page-hero">
   <div class="container">
     <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Academics</span></div>
+    <div class="gold-divider"></div>
     <h1 class="page-hero-title">Academic Programs</h1>
     <p class="page-hero-sub">A rigorous, creative, competency-based education from Senior One to Senior Six.</p>
   </div>
@@ -108,7 +110,7 @@
   <div class="container">
     <div class="program-banner reveal">
       <div>
-        <div class="program-banner-title">Lower Secondary — Senior 1 to Senior 4</div>
+        <div class="program-banner-title">Lower Secondary â€” Senior 1 to Senior 4</div>
         <div class="program-banner-desc">Uganda's Competency-Based Curriculum (CBC) prepares students with practical knowledge, critical thinking, and life skills through an integrated, learner-centred approach. Students develop a broad foundation before specialising at A-Level.</div>
       </div>
       <div class="program-banner-badge">
@@ -122,14 +124,14 @@
         <table class="subject-table">
           <thead><tr><th>Subject</th><th>Level</th><th>Type</th></tr></thead>
           <tbody>
-            <tr><td>English Language</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
-            <tr><td>Mathematics</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
-            <tr><td>Biology</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
-            <tr><td>Chemistry</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
-            <tr><td>Physics</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
-            <tr><td>History</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
-            <tr><td>Geography</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
-            <tr><td>Religious Education</td><td>S1 – S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>English Language</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Mathematics</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Biology</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Chemistry</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Physics</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>History</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Geography</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
+            <tr><td>Religious Education</td><td>S1 â€“ S4</td><td><span class="badge-core">Core</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -138,14 +140,14 @@
         <table class="subject-table">
           <thead><tr><th>Subject</th><th>Level</th><th>Type</th></tr></thead>
           <tbody>
-            <tr><td>Computer Studies</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
-            <tr><td>Agriculture</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
-            <tr><td>Entrepreneurship</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
-            <tr><td>Fine Art &amp; Design</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
-            <tr><td>Music</td><td>S1 – S3</td><td><span class="badge-elective">Elective</span></td></tr>
-            <tr><td>Literature in English</td><td>S1 – S4</td><td><span class="badge-elective">Elective</span></td></tr>
-            <tr><td>Home Economics</td><td>S1 – S3</td><td><span class="badge-elective">Elective</span></td></tr>
-            <tr><td>Technical Drawing</td><td>S1 – S3</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Computer Studies</td><td>S1 â€“ S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Agriculture</td><td>S1 â€“ S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Entrepreneurship</td><td>S1 â€“ S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Fine Art &amp; Design</td><td>S1 â€“ S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Music</td><td>S1 â€“ S3</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Literature in English</td><td>S1 â€“ S4</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Home Economics</td><td>S1 â€“ S3</td><td><span class="badge-elective">Elective</span></td></tr>
+            <tr><td>Technical Drawing</td><td>S1 â€“ S3</td><td><span class="badge-elective">Elective</span></td></tr>
           </tbody>
         </table>
       </div>
@@ -158,7 +160,7 @@
   <div class="container">
     <div class="program-banner reveal" style="background:linear-gradient(135deg,var(--gold-dark),var(--gold));">
       <div>
-        <div class="program-banner-title">Upper Secondary — Senior 5 &amp; Senior 6</div>
+        <div class="program-banner-title">Upper Secondary â€” Senior 5 &amp; Senior 6</div>
         <div class="program-banner-desc">A-Level prepares students for the Uganda Advanced Certificate of Education (UACE) and university entrance. Students choose principal subjects and subsidiaries based on their future career path.</div>
       </div>
       <div class="program-banner-badge">
@@ -197,7 +199,7 @@
       <table class="subject-table">
         <thead><tr><th>Subject</th><th>All Students</th><th>Notes</th></tr></thead>
         <tbody>
-          <tr><td>General Paper (GP)</td><td>✅ Compulsory</td><td>Critical thinking, current affairs, essay writing</td></tr>
+          <tr><td>General Paper (GP)</td><td>âœ… Compulsory</td><td>Critical thinking, current affairs, essay writing</td></tr>
           <tr><td>Mathematics (Subsidiary)</td><td>For Science students</td><td>Advanced mathematics to support science combinations</td></tr>
           <tr><td>Computer Studies (Subsidiary)</td><td>Optional</td><td>Digital literacy and programming fundamentals</td></tr>
           <tr><td>Entrepreneurship (Subsidiary)</td><td>Optional</td><td>Business planning and financial literacy</td></tr>
@@ -223,23 +225,23 @@
         <h3 style="font-family:var(--font-display);font-size:1.5rem;color:var(--royal-blue);margin-bottom:20px;">What Students Learn in Our Computer Lab</h3>
         <div style="display:flex;flex-direction:column;gap:12px;">
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--royal-blue);">
-            <div style="font-size:1.3rem;">💻</div>
+            <div style="font-size:1.3rem;">ðŸ’»</div>
             <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Computer Fundamentals</div><div style="font-size:0.85rem;color:var(--gray-600);">Hardware, software, operating systems, Microsoft Office Suite</div></div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--gold);">
-            <div style="font-size:1.3rem;">🌐</div>
+            <div style="font-size:1.3rem;">ðŸŒ</div>
             <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Internet &amp; Research</div><div style="font-size:0.85rem;color:var(--gray-600);">Online research, email communication, digital safety</div></div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--royal-blue);">
-            <div style="font-size:1.3rem;">📊</div>
+            <div style="font-size:1.3rem;">ðŸ“Š</div>
             <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Data &amp; Spreadsheets</div><div style="font-size:0.85rem;color:var(--gray-600);">Excel, data analysis, charts, and database management</div></div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--gold);">
-            <div style="font-size:1.3rem;">🎨</div>
+            <div style="font-size:1.3rem;">ðŸŽ¨</div>
             <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Graphic Design &amp; Presentation</div><div style="font-size:0.85rem;color:var(--gray-600);">PowerPoint, basic graphic design tools, digital creativity</div></div>
           </div>
           <div style="display:flex;align-items:flex-start;gap:14px;padding:14px;background:var(--off-white);border-radius:var(--radius);border-left:3px solid var(--royal-blue);">
-            <div style="font-size:1.3rem;">🤖</div>
+            <div style="font-size:1.3rem;">ðŸ¤–</div>
             <div><div style="font-weight:700;color:var(--royal-blue);margin-bottom:3px;">Coding &amp; Web Basics</div><div style="font-size:0.85rem;color:var(--gray-600);">Introduction to programming, HTML basics, problem solving</div></div>
           </div>
         </div>
@@ -268,10 +270,10 @@
 </section>
 
 <!-- VOCATIONAL LINK -->
-<section style="background:linear-gradient(135deg,var(--royal-blue),var(--blue-light));padding:60px 0;">
+<section style="background:linear-gradient(135deg,var(--royal-blue),#0055A0);padding:60px 0;">
   <div class="container" style="text-align:center;">
     <h2 style="font-family:var(--font-display);font-size:1.8rem;color:var(--white);margin-bottom:12px;">Explore Our Vocational Programs</h2>
-    <p style="color:rgba(255,255,255,0.85);margin-bottom:28px;max-width:550px;margin-left:auto;margin-right:auto;">Agriculture, ICT, Tailoring, Carpentry, Entrepreneurship &amp; more — practical skills that create real opportunity.</p>
+    <p style="color:rgba(255,255,255,0.85);margin-bottom:28px;max-width:550px;margin-left:auto;margin-right:auto;">Agriculture, ICT, Tailoring, Carpentry, Entrepreneurship &amp; more â€” practical skills that create real opportunity.</p>
     <div style="display:flex;justify-content:center;gap:16px;flex-wrap:wrap;">
       <a href="../index.html#vocational" class="btn btn-gold">View Vocational Programs</a>
       <a href="admissions.html" class="btn btn-outline">Apply Now</a>
@@ -280,10 +282,10 @@
 </section>
 
 <div style="background:var(--royal-blue);color:rgba(255,255,255,0.8);text-align:center;padding:20px;font-family:var(--font-ui);font-size:0.85rem;">
-  © 2026 St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga. |
-  <a href="../index.html" style="color:var(--gold-light);">Home</a> ·
-  <a href="admissions.html" style="color:var(--gold-light);">Apply Now</a> ·
-  <a href="contact.html" style="color:var(--gold-light);">Contact Us</a>
+  Â© 2026 St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga. |
+  <a href="../index.html" style="color:var(--gold);">Home</a> Â·
+  <a href="admissions.html" style="color:var(--gold);">Apply Now</a> Â·
+  <a href="contact.html" style="color:var(--gold);">Contact Us</a>
 </div>
 
 <a href="https://wa.me/256787292626" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
@@ -291,3 +293,7 @@
 <script src="../js/script.js"></script>
 </body>
 </html>
+
+
+
+

@@ -1,11 +1,5 @@
-/* ============================================================
-   ST. JOHN PAUL II SECONDARY SCHOOL - NAKUWADDE
-   Main JavaScript | Interactions, Animations, Dynamic Content
-   ============================================================ */
-
 'use strict';
 
-/* ===== UTILITY ===== */
 const $ = (sel, ctx = document) => ctx.querySelector(sel);
 const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
 
@@ -18,7 +12,7 @@ function showToast(msg, duration = 3500) {
   setTimeout(() => { toast.style.transform = 'translateX(-50%) translateY(100px)'; }, duration);
 }
 
-/* ===== NAVIGATION ===== */
+/* === NAV === */
 const header = $('#header');
 const hamburger = $('#hamburger');
 const navMenu = $('#navMenu');
@@ -39,7 +33,6 @@ hamburger?.addEventListener('click', () => {
   document.body.style.overflow = navMenu?.classList.contains('open') ? 'hidden' : '';
 });
 
-// Close menu on nav link click (mobile)
 $$('.nav-link').forEach(link => {
   link.addEventListener('click', () => {
     hamburger?.classList.remove('active');
@@ -48,82 +41,29 @@ $$('.nav-link').forEach(link => {
   });
 });
 
-// Back to top
 $('#backToTop')?.addEventListener('click', () => {
   window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
-/* ===== HERO SLIDER ===== */
-(function initHeroSlider() {
-  const slides = $$('.hero-slide');
-  const controlsEl = $('#heroControls');
-  if (!slides.length || !controlsEl) return;
-
-  let current = 0;
-  let autoTimer;
-
-  // Create dots
-  slides.forEach((_, i) => {
-    const dot = document.createElement('button');
-    dot.className = 'hero-dot' + (i === 0 ? ' active' : '');
-    dot.setAttribute('aria-label', `Slide ${i + 1}`);
-    dot.addEventListener('click', () => goTo(i));
-    controlsEl.appendChild(dot);
-  });
-
-  function goTo(idx) {
-    slides[current].classList.remove('active');
-    $$('.hero-dot')[current]?.classList.remove('active');
-    current = (idx + slides.length) % slides.length;
-    slides[current].classList.add('active');
-    $$('.hero-dot')[current]?.classList.add('active');
-  }
-
-  function next() { goTo(current + 1); }
-
-  autoTimer = setInterval(next, 5500);
-
-  document.addEventListener('visibilitychange', () => {
-    if (document.hidden) clearInterval(autoTimer);
-    else autoTimer = setInterval(next, 5500);
-  });
-})();
-
-/* ===== HERO STAT COUNTERS (on load) ===== */
-(function initHeroCounters() {
-  const els = $$('.hero-stat-value[data-count]');
-  els.forEach(el => {
-    const target = parseInt(el.dataset.count);
-    let current = 0;
-    const step = Math.ceil(target / 50);
-    const timer = setInterval(() => {
-      current = Math.min(current + step, target);
-      el.textContent = current + (el.dataset.suffix || '');
-      if (current >= target) clearInterval(timer);
-    }, 30);
-  });
-})();
-
-/* ===== ANIMATED STAT COUNTERS (scroll reveal) ===== */
+/* === ANIMATED COUNTERS === */
 function animateCounter(el) {
   if (el.dataset.animated) return;
   el.dataset.animated = 'true';
   const target = parseInt(el.dataset.target);
-  const suffix = el.innerHTML.match(/<span[^>]*>(.*?)<\/span>/)?.[0] || '';
   let current = 0;
-  const duration = 1800;
+  const duration = 2000;
   const step = target / (duration / 16);
   const timer = setInterval(() => {
     current = Math.min(current + step, target);
-    el.innerHTML = Math.floor(current) + suffix;
-    if (current >= target) { el.innerHTML = target + suffix; clearInterval(timer); }
+    el.textContent = Math.floor(current) + (el.dataset.suffix || '');
+    if (current >= target) { el.textContent = target + (el.dataset.suffix || ''); clearInterval(timer); }
   }, 16);
 }
 
-/* ===== SCROLL REVEAL ===== */
+/* === SCROLL REVEAL === */
 (function initScrollReveal() {
   const revealEls = $$('.reveal, .reveal-left, .reveal-right');
-  const statEls = $$('.stat-number[data-target]');
+  const statEls = $$('.stat-number[data-target], .quick-stat-number[data-target], .hero-stat-number[data-target]');
 
   const io = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
@@ -139,78 +79,7 @@ function animateCounter(el) {
   statEls.forEach(el => io.observe(el));
 })();
 
-/* ===== ACADEMICS TABS ===== */
-(function initAcademicsTabs() {
-  const tabs = $$('.tab-btn[data-tab]');
-  tabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      tabs.forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-      $$('.tab-content').forEach(c => c.classList.remove('active'));
-      const target = $(`#tab-content-${btn.dataset.tab}`);
-      target?.classList.add('active');
-    });
-  });
-})();
-
-/* ===== CAMPUS LIFE DATA & TABS ===== */
-const campusData = {
-  sports: [
-    { emoji: '⚽', title: 'Football', desc: 'Our senior football team competes in district and national inter-school tournaments. Boys and girls teams are both active.' },
-    { emoji: '🏐', title: 'Netball', desc: 'Netball is a flagship sport at our school. Our girls team has represented Wakiso District in national competitions.' },
-    { emoji: '🏃', title: 'Athletics', desc: 'Track and field events including sprints, long jump, and cross-country running. Students compete at district level.' },
-    { emoji: '🏐', title: 'Volleyball', desc: 'Indoor and outdoor volleyball for boys and girls, with regular practice sessions and inter-school friendly matches.' },
-  ],
-  clubs: [
-    { emoji: '🎙️', title: 'Debate Club', desc: 'Sharpening critical thinking and public speaking. Our debaters have won district championships and represent the school nationally.' },
-    { emoji: '💻', title: 'ICT Club', desc: 'Exploring technology, coding, and digital innovation. Members participate in national tech competitions and hackathons.' },
-    { emoji: '✝️', title: 'Scripture Union', desc: 'A faith-based fellowship open to all Christian students for Bible study, prayer, and community service projects.' },
-    { emoji: '🌿', title: 'Wildlife Club', desc: 'Environmental awareness, conservation projects, tree planting, and nature education for environmentally conscious students.' },
-    { emoji: '💼', title: 'Entrepreneurship Club', desc: 'Students develop and pitch business ideas, run small school enterprises, and learn real-world financial skills.' },
-    { emoji: '🎭', title: 'Drama & Arts Club', desc: 'Creative expression through drama, music, fine art, and cultural performances at school and community events.' },
-  ],
-  boarding: [
-    { emoji: '🏠', title: 'Boys Dormitory', desc: 'Comfortable, supervised accommodation for boarding boys with separate study rooms, lockers, and recreational space.' },
-    { emoji: '🏡', title: 'Girls Dormitory', desc: 'Safe, well-managed boarding for girls with house mothers on duty 24/7, ensuring a secure home away from home.' },
-    { emoji: '🍽️', title: 'Dining Hall', desc: 'Three nutritious meals daily including breakfast, lunch, and supper. Balanced menus planned by our catering team.' },
-    { emoji: '📚', title: 'Evening Studies', desc: 'Structured prep time every evening supervised by teachers. Students complete assignments and review daily lessons.' },
-  ],
-  leadership: [
-    { emoji: '👑', title: 'Student Council', desc: 'Elected student government representing all classes. Organises events, mediates student concerns, and develops leadership skills.' },
-    { emoji: '🌟', title: 'Prefect Body', desc: 'Class prefects, dormitory prefects, and senior prefects maintain order and bridge communication between students and staff.' },
-    { emoji: '🤝', title: 'Community Service', desc: 'Regular outreach to the Nakuwadde community including cleaning drives, hospital visits, and support for vulnerable families.' },
-    { emoji: '📣', title: 'Leadership Training', desc: 'Annual leadership camps, guest speakers, and workshops that develop confident, compassionate, and competent future leaders.' },
-  ]
-};
-
-function renderCampusGrid(tab) {
-  const grid = $('#campusGrid');
-  if (!grid) return;
-  const data = campusData[tab] || [];
-  grid.innerHTML = data.map(item => `
-    <div class="campus-card">
-      <div class="campus-card-img">${item.emoji}</div>
-      <div class="campus-card-body">
-        <h4 class="campus-card-title">${item.title}</h4>
-        <p class="campus-card-desc">${item.desc}</p>
-      </div>
-    </div>
-  `).join('');
-}
-
-(function initCampusTabs() {
-  renderCampusGrid('sports');
-  const campusTabs = $$('[data-campus-tab]');
-  campusTabs.forEach(btn => {
-    btn.addEventListener('click', () => {
-      campusTabs.forEach(t => t.classList.remove('active'));
-      btn.classList.add('active');
-      renderCampusGrid(btn.dataset.campusTab);
-    });
-  });
-})();
-
-/* ===== GALLERY DATA & FILTER ===== */
+/* === GALLERY === */
 const galleryImages = [
   { src: 'img/493997268_1402715580740031_3498673567538420048_n.jpg', caption: 'School Life Moments', cat: 'events' },
   { src: 'img/559949554_1242871727862746_4853270271445248006_n.jpg', caption: 'Students in Uniform', cat: 'events' },
@@ -220,51 +89,51 @@ const galleryImages = [
   { src: 'img/A level students thanksgiving .png', caption: 'A-Level Students Thanksgiving', cat: 'events' },
   { src: 'img/A level students.png', caption: 'A-Level Students', cat: 'academics' },
   { src: 'img/alevel students.jpg', caption: 'A-Level Students', cat: 'academics' },
-  { src: 'img/assbly.jpeg', caption: 'School Assembly — Morning Devotion', cat: 'worship' },
+  { src: 'img/assbly.jpeg', caption: 'Morning Assembly', cat: 'worship' },
   { src: 'img/blk.jpg', caption: 'Students in Classroom', cat: 'academics' },
-  { src: 'img/bo gams.jpg', caption: 'Board Games — Students at Play', cat: 'sports' },
+  { src: 'img/bo gams.jpg', caption: 'Board Games', cat: 'sports' },
   { src: 'img/director students1.png', caption: 'Director with Students', cat: 'events' },
   { src: 'img/director.png', caption: 'The School Director', cat: 'events' },
   { src: 'img/examination hall.png', caption: 'Examination Hall', cat: 'academics' },
   { src: 'img/group photo1.png', caption: 'Group Photo', cat: 'events' },
   { src: 'img/group photo2.png', caption: 'Group Photo', cat: 'events' },
-  { src: 'img/hall.jpg', caption: 'School Hall — Gatherings & Events', cat: 'events' },
+  { src: 'img/hall.jpg', caption: 'School Hall', cat: 'events' },
   { src: 'img/images (2).jpg', caption: 'School Activities', cat: 'events' },
   { src: 'img/intro.jpg', caption: 'School Introduction Day', cat: 'events' },
-  { src: 'img/kibiina2.jpg', caption: 'Choir Practice Session', cat: 'worship' },
-  { src: 'img/kisuro.jpg', caption: 'Classroom Session — Kiswahili Lesson', cat: 'academics' },
-  { src: 'img/library Image2.jpg', caption: 'School Library — A Space for Learning', cat: 'academics' },
+  { src: 'img/kibiina2.jpg', caption: 'Choir Practice', cat: 'worship' },
+  { src: 'img/kisuro.jpg', caption: 'Kiswahili Lesson', cat: 'academics' },
+  { src: 'img/library Image2.jpg', caption: 'School Library', cat: 'academics' },
   { src: 'img/o level students group photo.png', caption: 'O-Level Students Group Photo', cat: 'academics' },
-  { src: 'img/o level students seminar2.png', caption: 'O-Level Students Seminar', cat: 'academics' },
-  { src: 'img/olevel students with DOS.png', caption: 'O-Level Students with DOS', cat: 'events' },
-  { src: 'img/phys.jpg', caption: 'Students in Physics Lesson', cat: 'academics' },
+  { src: 'img/o level students seminar2.png', caption: 'O-Level Seminar', cat: 'academics' },
+  { src: 'img/olevel students with DOS.png', caption: 'Students with DOS', cat: 'events' },
+  { src: 'img/phys.jpg', caption: 'Physics Lesson', cat: 'academics' },
   { src: 'img/prom1.png', caption: 'Prom Night', cat: 'events' },
   { src: 'img/prom3.png', caption: 'Prom Night', cat: 'events' },
   { src: 'img/promo2.png', caption: 'Promotional Event', cat: 'events' },
   { src: 'img/school campus.png', caption: 'School Campus', cat: 'events' },
-  { src: 'img/school compound.jpg', caption: 'School Compound — Beautiful Campus Views', cat: 'events' },
+  { src: 'img/school compound.jpg', caption: 'School Compound', cat: 'events' },
   { src: 'img/school compund square.png', caption: 'School Compound Square', cat: 'events' },
-  { src: 'img/School logo.jpeg', caption: 'St. John Paul II Day & Boarding School Nakuwadde - Bulenga Logo', cat: 'events' },
+  { src: 'img/School logo.jpeg', caption: 'School Logo', cat: 'events' },
   { src: 'img/Screenshot 2026-06-08 162353.jpg', caption: 'Science Lab Practical', cat: 'academics' },
   { src: 'img/Screenshot 2026-06-08 162420.jpg', caption: 'ICT Computer Lab', cat: 'academics' },
-  { src: 'img/spkg mi.webp', caption: 'Student Public Speaking', cat: 'academics' },
-  { src: 'img/st kibina.jpg', caption: 'St. Kizito Choir Performance', cat: 'worship' },
+  { src: 'img/spkg mi.webp', caption: 'Public Speaking', cat: 'academics' },
+  { src: 'img/st kibina.jpg', caption: 'St. Kizito Choir', cat: 'worship' },
   { src: 'img/st para2.webp', caption: 'School Parade', cat: 'events' },
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (1).webp', caption: 'School Life', cat: 'events' },
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (10).webp', caption: 'School Gathering', cat: 'events' },
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (3).webp', caption: 'School Life Moments', cat: 'events' },
-  { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (5).webp', caption: 'Students at Break Time', cat: 'events' },
+  { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (5).webp', caption: 'Students at Break', cat: 'events' },
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (6).webp', caption: 'Outdoor Activities', cat: 'sports' },
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (8).webp', caption: 'Class Group Photo', cat: 'academics' },
-  { src: 'img/students activities.png', caption: 'Students Activities', cat: 'sports' },
+  { src: 'img/students activities.png', caption: 'Student Activities', cat: 'sports' },
   { src: 'img/students seminar.png', caption: 'Students Seminar', cat: 'academics' },
   { src: 'img/Teacher award2.png', caption: 'Teacher Award Ceremony', cat: 'events' },
   { src: 'img/teachers event.png', caption: 'Teachers Event', cat: 'events' },
   { src: 'img/teachers group photo.png', caption: 'Teachers Group Photo', cat: 'events' },
   { src: 'img/teachers2.jpg', caption: 'Teachers', cat: 'academics' },
   { src: 'img/teachers3.png', caption: 'Teachers', cat: 'academics' },
-  { src: 'img/tr st.webp', caption: 'Staff Meeting & Planning', cat: 'academics' },
-  { src: 'img/trs.webp', caption: 'Our Dedicated Teachers', cat: 'academics' },
+  { src: 'img/tr st.webp', caption: 'Staff Meeting', cat: 'academics' },
+  { src: 'img/trs.webp', caption: 'Our Teachers', cat: 'academics' },
   { src: 'img/visitors to the School.jpg', caption: 'Visitors to the School', cat: 'events' },
 ];
 
@@ -278,7 +147,7 @@ function renderGallery(filter) {
   filteredImages = filter === 'all' ? galleryImages : galleryImages.filter(img => img.cat === filter);
   grid.innerHTML = filteredImages.map((img, i) => `
     <div class="gallery-item" data-index="${i}" data-cat="${img.cat}">
-      <img src="${img.src}" alt="${img.caption}" loading="lazy" onerror="this.src='hero_classroom.png'" />
+      <img src="${img.src}" alt="${img.caption}" loading="lazy" />
       <div class="gallery-overlay">
         <div class="gallery-caption">${img.caption}</div>
       </div>
@@ -342,7 +211,7 @@ function lightboxNav(dir) {
   });
 })();
 
-/* ===== TESTIMONIALS CAROUSEL ===== */
+/* === TESTIMONIALS === */
 (function initTestimonials() {
   const track = $('#testimonialsTrack');
   const dotsContainer = $('#testimonialDots');
@@ -352,7 +221,6 @@ function lightboxNav(dir) {
   let current = 0;
   let autoTimer;
 
-  // Create dots
   cards.forEach((_, i) => {
     const dot = document.createElement('button');
     dot.className = 't-dot' + (i === 0 ? ' active' : '');
@@ -379,7 +247,7 @@ function lightboxNav(dir) {
   track.addEventListener('mouseleave', () => { autoTimer = setInterval(next, 6000); });
 })();
 
-/* ===== FORMS ===== */
+/* === FORMS === */
 function handleForm(formId, successMsg) {
   const form = $(`#${formId}`);
   if (!form) return;
@@ -431,11 +299,11 @@ $('#newsletterForm')?.addEventListener('submit', e => {
   e.preventDefault();
   const email = $('#newsletterEmail')?.value;
   if (!email) return;
-  showToast('🎉 You\'re subscribed! Thank you for joining our community.');
+  showToast('You\'re subscribed! Thank you for joining our community.');
   $('#newsletterForm').reset();
 });
 
-/* ===== ACTIVE NAV LINK ON SCROLL ===== */
+/* === ACTIVE NAV === */
 (function initActiveNav() {
   const sections = $$('section[id]');
   const navLinks = $$('.nav-link');
@@ -453,37 +321,36 @@ $('#newsletterForm')?.addEventListener('submit', e => {
   });
 })();
 
-/* ===== SMOOTH SCROLL FOR ANCHOR LINKS ===== */
+/* === SMOOTH SCROLL === */
 $$('a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = $(link.getAttribute('href'));
     if (target) {
       e.preventDefault();
-      const offset = 80;
-      window.scrollTo({ top: target.offsetTop - offset, behavior: 'smooth' });
+      const headerHeight = header?.offsetHeight || 80;
+      window.scrollTo({ top: target.offsetTop - headerHeight, behavior: 'smooth' });
     }
   });
 });
 
-/* ===== IMAGE FALLBACKS ===== */
-// Use school-provided photos where possible
+/* === IMAGE FALLBACKS === */
 document.addEventListener('DOMContentLoaded', () => {
   $$('img[src]').forEach(img => {
     img.addEventListener('error', function() {
       if (!this.dataset.fallbackApplied) {
         this.dataset.fallbackApplied = '1';
-        this.src = 'hero_classroom.png';
+        this.src = 'school_logo.png';
       }
     });
   });
 });
 
-/* ===== TYPING ANIMATION FOR MOTTO ===== */
+/* === TYPING NAV MOTTO === */
 (function initTypingEffect() {
   const mottos = [
     '"A Creative Space for a Mind"',
-    'Empowering Future Leaders',
-    'Excellence · Faith · Innovation',
+    'Excellence | Faith | Innovation',
+    'Building Tomorrow\'s Leaders',
     'Skills for Life. Values for Eternity.'
   ];
   const els = $$('.nav-brand-motto');
@@ -502,15 +369,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }, 4000);
 })();
 
-/* ===== PARALLAX HERO ===== */
+/* === PARALLAX HERO === */
 window.addEventListener('scroll', () => {
-  const heroSlides = $$('.hero-slide.active');
-  heroSlides.forEach(slide => {
-    const scrolled = window.scrollY;
-    slide.style.transform = `translateY(${scrolled * 0.3}px)`;
-  });
+  const hero = $('.hero');
+  if (hero && window.scrollY < window.innerHeight) {
+    const scrolled = window.scrollY * 0.3;
+    const overlay = hero.querySelector('.hero-overlay');
+    const pattern = hero.querySelector('.hero-pattern');
+    if (overlay) overlay.style.transform = `translateY(${scrolled * 0.1}px)`;
+  }
 });
 
-console.log('%c🎓 St. John Paul II Day & Boarding Secondary School Nakuwadde - Bulenga', 'color:#0A2472;font-size:18px;font-weight:bold;');
-console.log('%c"A Creative Space for a Mind"', 'color:#C9A84C;font-size:14px;font-style:italic;');
-console.log('%cWebsite powered by modern web technology. Admissions: +256 787 292626', 'color:#64748B;font-size:12px;');
+console.log('%c St. John Paul II SS Nakuwadde - Bulenga', 'color:#003A70;font-size:18px;font-weight:bold;');
+console.log('%c "A Creative Space for a Mind"', 'color:#FFD700;font-size:14px;font-style:italic;');
+console.log('%c Admissions: +256 787 292626', 'color:#64748B;font-size:12px;');
