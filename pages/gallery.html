@@ -10,7 +10,7 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="../css/style.css" />
 
-  <style>
+    <style>
     .page-hero { background:linear-gradient(135deg, var(--deep-navy) 0%, var(--royal-blue) 60%, #001F3F 100%); padding:120px 0 70px; position:relative; overflow:hidden; }
     .page-hero::after { content:''; position:absolute; bottom:0; left:0; right:0; height:60px; background:var(--white); clip-path:ellipse(55% 100% at 50% 100%); }
     .page-hero-title { font-family:var(--font-display); font-size:clamp(2rem,4vw,3rem); font-weight:800; color:var(--white); margin-bottom:12px; }
@@ -23,6 +23,11 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
       gap: 20px;
+    }
+    @media (max-width: 768px) {
+      .page-gallery-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding-bottom: 16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
+      .page-gallery-grid::-webkit-scrollbar { display: none; }
+      .page-gallery-item { min-width: 280px; scroll-snap-align: start; flex-shrink: 0; }
     }
     .page-gallery-item {
       position: relative;
@@ -135,6 +140,7 @@
       <button class="filter-btn" data-filter="events" onclick="filterGallery('events',this)">Events</button>
     </div>
 
+    <div class="swipe-hint"><i class="fas fa-chevron-left"></i> Swipe to browse photos <i class="fas fa-chevron-right"></i></div>
     <div class="page-gallery-grid" id="pageGalleryGrid">
       <!-- Rendered by JS -->
     </div>
@@ -159,8 +165,30 @@
   <a href="contact.html" style="color:var(--gold);">Contact Us</a>
 </div>
 
-<a href="https://wa.me/256787292626" class="whatsapp-float" target="_blank"><i class="fab fa-whatsapp"></i></a>
+<a href="https://wa.me/256787292626?text=Hello%2C%20I%20would%20like%20to%20inquire%20about%20St.%20John%20Paul%20II%20Secondary%20School%20Nakuwadde." class="whatsapp-float" target="_blank" title="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
 <button class="back-to-top" id="backToTop"><i class="fas fa-chevron-up"></i></button>
+
+<!-- MOBILE BOTTOM BAR -->
+<div class="mobile-bottom-bar">
+  <div class="container">
+    <a href="tel:+256787292626" class="mobile-bar-btn">
+      <i class="fas fa-phone-alt"></i>
+      <span>Call School</span>
+    </a>
+    <a href="https://wa.me/256787292626" class="mobile-bar-btn" target="_blank">
+      <i class="fab fa-whatsapp"></i>
+      <span>WhatsApp</span>
+    </a>
+    <a href="https://www.google.com/maps/dir//Nakuwadde+Bulenga+Uganda" class="mobile-bar-btn" target="_blank">
+      <i class="fas fa-directions"></i>
+      <span>Directions</span>
+    </a>
+    <a href="admissions.html" class="mobile-bar-btn gold">
+      <i class="fas fa-graduation-cap"></i>
+      <span>Apply Now</span>
+    </a>
+  </div>
+</div>
 
 <script src="../js/script.js"></script>
 <script>

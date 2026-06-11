@@ -380,6 +380,89 @@ window.addEventListener('scroll', () => {
   }
 });
 
+/* === COUNTDOWN TIMER === */
+(function initCountdown() {
+  const dEl = $('#cd-days');
+  const hEl = $('#cd-hours');
+  const mEl = $('#cd-mins');
+  const sEl = $('#cd-secs');
+  if (!dEl) return;
+
+  const target = new Date();
+  target.setDate(target.getDate() + 30);
+  target.setHours(23, 59, 59, 0);
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const diff = target - new Date();
+    if (diff <= 0) {
+      dEl.textContent = '00'; hEl.textContent = '00'; mEl.textContent = '00'; sEl.textContent = '00';
+      return;
+    }
+    const d = Math.floor(diff / 86400000);
+    const h = Math.floor((diff % 86400000) / 3600000);
+    const m = Math.floor((diff % 3600000) / 60000);
+    const s = Math.floor((diff % 60000) / 1000);
+    dEl.textContent = pad(d);
+    hEl.textContent = pad(h);
+    mEl.textContent = pad(m);
+    sEl.textContent = pad(s);
+  }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+/* === TOUCH SWIPE FOR CAROUSELS === */
+(function initTouchSwipes() {
+  function makeSwipeable(container) {
+    const el = typeof container === 'string' ? $(container) : container;
+    if (!el) return;
+    let startX = 0;
+    let startY = 0;
+    let isDragging = false;
+
+    el.addEventListener('touchstart', e => {
+      const touch = e.changedTouches[0];
+      startX = touch.screenX;
+      startY = touch.screenY;
+      isDragging = true;
+    }, { passive: true });
+
+    el.addEventListener('touchend', e => {
+      if (!isDragging) return;
+      isDragging = false;
+      const touch = e.changedTouches[0];
+      const diffX = touch.screenX - startX;
+      const diffY = touch.screenY - startY;
+      if (Math.abs(diffX) < 30 || Math.abs(diffY) > Math.abs(diffX)) return;
+
+      const scrollAmount = el.clientWidth * 0.6;
+      if (diffX < 0) {
+        el.scrollBy({ left: scrollAmount, behavior: 'smooth' });
+      } else {
+        el.scrollBy({ left: -scrollAmount, behavior: 'smooth' });
+      }
+    }, { passive: true });
+  }
+
+  makeSwipeable('.gallery-grid');
+  makeSwipeable('.success-grid');
+  makeSwipeable('.vocational-grid');
+  makeSwipeable('.student-life-grid');
+  makeSwipeable('.academic-hub-grid');
+})();
+
+/* === ADD WHATSAPP TEXT LABEL === */
+(function enhanceWhatsapp() {
+  const btn = $('#whatsappFloat');
+  if (!btn) return;
+  const label = document.createElement('span');
+  label.className = 'whatsapp-label';
+  label.textContent = 'Chat with Admissions';
+  btn.appendChild(label);
+})();
+
 console.log('%c St. John Paul II SS Nakuwadde - Bulenga', 'color:#003A70;font-size:18px;font-weight:bold;');
 console.log('%c "A Creative Space for a Mind"', 'color:#FFD700;font-size:14px;font-style:italic;');
 console.log('%c Admissions: +256 787 292626', 'color:#64748B;font-size:12px;');
