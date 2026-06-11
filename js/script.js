@@ -513,4 +513,4 @@ window.addEventListener('scroll', () => {
 
 console.log('%c🎓 St. John Paul II Day & Boarding Secondary School Nakuwadde - Bulenga', 'color:#0A2472;font-size:18px;font-weight:bold;');
 console.log('%c"A Creative Space for a Mind"', 'color:#C9A84C;font-size:14px;font-style:italic;');
-console.log('%cWebsite powered by modern web technology. Admissions: +256 703 262 686', 'color:#64748B;font-size:12px;');
+console.log('%cWebsite powered by modern web technology. Admissions: +256 787 292626', 'color:#64748B;font-size:12px;');
