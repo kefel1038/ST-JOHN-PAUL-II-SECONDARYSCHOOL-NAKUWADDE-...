@@ -51,6 +51,8 @@ hamburger?.addEventListener('click', () => {
 
 menuOverlay?.addEventListener('click', closeMenu);
 
+$('#navMenuClose')?.addEventListener('click', closeMenu);
+
 $$('.nav-link').forEach(link => {
   link.addEventListener('click', closeMenu);
 });
@@ -313,19 +315,17 @@ $('#newsletterForm')?.addEventListener('submit', e => {
 
 /* === ACTIVE NAV === */
 (function initActiveNav() {
-  const sections = $$('section[id]');
   const navLinks = $$('.nav-link');
+  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(section => {
-      const sTop = section.offsetTop - 120;
-      if (window.scrollY >= sTop) current = section.id;
-    });
-    navLinks.forEach(link => {
-      link.classList.remove('active');
-      if (link.getAttribute('href')?.includes(current)) link.classList.add('active');
-    });
+  navLinks.forEach(link => {
+    const href = link.getAttribute('href');
+    if (href) {
+      const linkFile = href.split('/').pop();
+      if (linkFile === currentPath) {
+        link.classList.add('active');
+      }
+    }
   });
 })();
 
@@ -455,6 +455,9 @@ window.addEventListener('scroll', () => {
   }
 
   makeSwipeable('.gallery-grid');
+  makeSwipeable('.page-gallery-grid.masonry');
+  makeSwipeable('.gallery-categories');
+  makeSwipeable('.gallery-filter-scroll');
   makeSwipeable('.success-grid');
   makeSwipeable('.vocational-grid');
   makeSwipeable('.student-life-grid');

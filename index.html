@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
@@ -52,15 +52,27 @@
         </div>
       </a>
       <ul class="nav-menu" id="navMenu">
-        <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-        <li class="nav-item"><a href="pages/about.html" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="pages/academics.html" class="nav-link">Academics</a></li>
-        <li class="nav-item"><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
-        <li class="nav-item"><a href="pages/news.html" class="nav-link">News & Events</a></li>
-        <li class="nav-item"><a href="pages/admissions.html" class="nav-link">Admissions</a></li>
-        <li class="nav-item"><a href="pages/contact.html" class="nav-link">Contact</a></li>
+        <div class="nav-menu-header">
+          <div style="display:flex;align-items:center;gap:10px;">
+            <img src="school_logo.png" alt="School Logo" class="nav-logo" />
+            <div class="nav-brand-text">
+              <span class="nav-brand-name">St. John Paul II Day &amp; Boarding SS Nakuwadde - Bulenga</span>
+              <span class="nav-brand-motto">"A Creative Space for a Mind"</span>
+            </div>
+          </div>
+          <button class="nav-menu-close" id="navMenuClose" aria-label="Close menu"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="nav-menu-body">
+          <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="pages/about.html" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="pages/academics.html" class="nav-link">Academics</a></li>
+          <li class="nav-item"><a href="pages/gallery.html" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="pages/news.html" class="nav-link">News & Events</a></li>
+          <li class="nav-item"><a href="pages/admissions.html" class="nav-link">Admissions</a></li>
+          <li class="nav-item"><a href="pages/contact.html" class="nav-link">Contact</a></li>
+          <a href="pages/admissions.html" class="nav-menu-cta"><i class="fas fa-graduation-cap"></i> Apply Now</a>
+        </div>
       </ul>
-      <a href="pages/admissions.html" class="btn btn-gold btn-sm nav-cta"><i class="fas fa-graduation-cap"></i> Apply Now</a>
       <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
     </nav>
   </div>
@@ -447,32 +459,32 @@
     <div class="swipe-hint"><i class="fas fa-chevron-left"></i> Swipe to view Programs <i class="fas fa-chevron-right"></i></div>
     <div class="academic-hub-grid">
       <div class="academic-card reveal">
-        <span class="academic-card-icon">📘</span>
+        <span class="academic-card-icon"></span>
         <h3 class="academic-card-title">UCE Program (S.1 - S.4)</h3>
         <p class="academic-card-desc">Competency-based curriculum covering sciences, humanities, languages, and vocational subjects. Preparing students for the Uganda Certificate of Education.</p>
       </div>
       <div class="academic-card reveal">
-        <span class="academic-card-icon">📕</span>
+        <span class="academic-card-icon"></span>
         <h3 class="academic-card-title">UACE Program (S.5 - S.6)</h3>
         <p class="academic-card-desc">Advanced-level education with science, arts, and vocational combinations. Preparing students for university and tertiary education.</p>
       </div>
       <div class="academic-card reveal">
-        <span class="academic-card-icon">🔬</span>
+        <span class="academic-card-icon"></span>
         <h3 class="academic-card-title">Science Programs</h3>
         <p class="academic-card-desc">Physics, Chemistry, Biology, and Mathematics. Well-equipped laboratories and practical-based learning approach.</p>
       </div>
       <div class="academic-card reveal">
-        <span class="academic-card-icon">🎭</span>
+        <span class="academic-card-icon"></span>
         <h3 class="academic-card-title">Arts & Humanities</h3>
         <p class="academic-card-desc">History, Geography, Literature, CRE, and Languages. Developing critical thinking and cultural awareness.</p>
       </div>
       <div class="academic-card reveal">
-        <span class="academic-card-icon">💻</span>
+        <span class="academic-card-icon"></span>
         <h3 class="academic-card-title">ICT & Technology</h3>
         <p class="academic-card-desc">Computer literacy, programming basics, digital research skills, and technology-enhanced learning across all subjects.</p>
       </div>
       <div class="academic-card reveal">
-        <span class="academic-card-icon">📋</span>
+        <span class="academic-card-icon"></span>
         <h3 class="academic-card-title">CBC Learning</h3>
         <p class="academic-card-desc">Competency-Based Curriculum focused on critical thinking, creativity, communication, collaboration, and character development.</p>
       </div>
@@ -492,42 +504,42 @@
     <div class="swipe-hint" style="color:rgba(255,255,255,0.4);"><i class="fas fa-chevron-left"></i> Swipe to explore Programs <i class="fas fa-chevron-right"></i></div>
     <div class="vocational-grid">
       <div class="vocational-card reveal">
-        <span class="vocational-icon">🌱</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">Agriculture</h3>
         <p class="vocational-desc">Crop farming, animal husbandry, modern farming techniques, and agribusiness management.</p>
       </div>
       <div class="vocational-card reveal">
-        <span class="vocational-icon">🧵</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">Tailoring & Fashion</h3>
         <p class="vocational-desc">Garment design, sewing, embroidery, and fashion entrepreneurship skills.</p>
       </div>
       <div class="vocational-card reveal">
-        <span class="vocational-icon">💼</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">Entrepreneurship</h3>
         <p class="vocational-desc">Business planning, financial literacy, marketing, and small enterprise management.</p>
       </div>
       <div class="vocational-card reveal">
-        <span class="vocational-icon">💻</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">ICT Skills</h3>
         <p class="vocational-desc">Computer applications, programming, web design, and digital literacy for the modern workplace.</p>
       </div>
       <div class="vocational-card reveal">
-        <span class="vocational-icon">🔨</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">Carpentry & Joinery</h3>
         <p class="vocational-desc">Woodworking, furniture making, construction skills, and craftsmanship.</p>
       </div>
       <div class="vocational-card reveal">
-        <span class="vocational-icon">🎨</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">Art & Design</h3>
         <p class="vocational-desc">Fine art, graphic design, creative crafts, and visual communication skills.</p>
       </div>
       <div class="vocational-card reveal">
-        <span class="vocational-icon">⚙️</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">Technical Skills</h3>
         <p class="vocational-desc">Basic engineering, electronics, maintenance, and technical problem-solving.</p>
       </div>
       <div class="vocational-card reveal">
-        <span class="vocational-icon">💰</span>
+        <span class="vocational-icon"></span>
         <h3 class="vocational-title">Financial Literacy</h3>
         <p class="vocational-desc">Personal finance, savings, investment basics, and economic empowerment for young people.</p>
       </div>
