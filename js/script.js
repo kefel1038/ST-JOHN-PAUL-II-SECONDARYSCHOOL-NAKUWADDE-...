@@ -99,7 +99,7 @@ function animateCounter(el) {
 const galleryImages = [
   { src: 'img/493997268_1402715580740031_3498673567538420048_n.jpg', caption: 'School Life Moments', cat: 'events' },
   { src: 'img/559949554_1242871727862746_4853270271445248006_n.jpg', caption: 'Students in Uniform', cat: 'events' },
-  { src: 'img/a leevel students 4.png', caption: 'A-Level Students', cat: 'academics' },
+
   { src: 'img/a level students group photo.png', caption: 'A-Level Students Group Photo', cat: 'academics' },
   { src: 'img/A level students thanksgiving .png', caption: 'A-Level Students Thanksgiving', cat: 'events' },
   { src: 'img/assbly.jpeg', caption: 'Morning Assembly', cat: 'worship' },
