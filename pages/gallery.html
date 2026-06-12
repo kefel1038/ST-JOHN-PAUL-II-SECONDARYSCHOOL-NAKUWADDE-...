@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="School gallery for St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga â€” Academics, Sports, Worship, Vocational Training, and Events." />
+  <meta name="description" content="School gallery for St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga - Academics, Sports, Worship, Vocational Training, and Events." />
   <title>Gallery | St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,800;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
@@ -21,19 +21,20 @@
 
     .page-gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 16px;
     }
     @media (max-width: 768px) {
-      .page-gallery-grid { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 12px; padding-bottom: 16px; -webkit-overflow-scrolling: touch; scrollbar-width: none; }
-      .page-gallery-grid::-webkit-scrollbar { display: none; }
-      .page-gallery-item { min-width: 280px; scroll-snap-align: start; flex-shrink: 0; }
+      .page-gallery-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+    }
+    @media (max-width: 480px) {
+      .page-gallery-grid { grid-template-columns: 1fr; }
     }
     .page-gallery-item {
       position: relative;
       border-radius: var(--radius);
       overflow: hidden;
-      aspect-ratio: 4/3;
+      aspect-ratio: 1/1;
       cursor: pointer;
       background: var(--gray-800);
       transition: var(--transition);
@@ -119,7 +120,7 @@
     <div class="breadcrumb"><a href="../index.html">Home</a><span>/</span><span>Gallery</span></div>
     <div class="gold-divider"></div>
     <h1 class="page-hero-title">School Gallery</h1>
-    <p class="page-hero-sub">A visual journey through life at St. John Paul II Day &amp; Boarding SS Nakuwadde - Bulenga â€” moments of learning, faith, sport, and community.</p>
+    <p class="page-hero-sub">A visual journey through life at St. John Paul II Day &amp; Boarding SS Nakuwadde - Bulenga - moments of learning, faith, sport, and community.</p>
   </div>
 </div>
 
@@ -128,10 +129,10 @@
     <div class="section-header text-center reveal">
       <span class="badge"><i class="fas fa-images"></i> Our School in Pictures</span>
       <h2 class="section-title">Life at St. John Paul II</h2>
-      <p class="section-subtitle" style="margin:0 auto;">Explore our gallery organised by category â€” academics, sports, worship, vocational training, and special events.</p>
+      <p class="section-subtitle" style="margin:0 auto;">Explore our gallery organised by category - academics, sports, worship, vocational training, and special events.</p>
     </div>
 
-    <div class="gallery-filter" style="justify-content:center;">
+    <div class="gallery-filter">
       <button class="filter-btn active" data-filter="all" onclick="filterGallery('all',this)">All</button>
       <button class="filter-btn" data-filter="academics" onclick="filterGallery('academics',this)">Academics</button>
       <button class="filter-btn" data-filter="sports" onclick="filterGallery('sports',this)">Sports</button>
@@ -159,9 +160,9 @@
 </div>
 
 <div style="background:var(--royal-blue);color:rgba(255,255,255,0.8);text-align:center;padding:20px;font-family:var(--font-ui);font-size:0.85rem;">
-  Â© 2026 St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga. |
-  <a href="../index.html" style="color:var(--gold);">Home</a> Â·
-  <a href="admissions.html" style="color:var(--gold);">Apply Now</a> Â·
+  © 2026 St. John Paul II Day &amp; Boarding Secondary School Nakuwadde - Bulenga. |
+  <a href="../index.html" style="color:var(--gold);">Home</a> ·
+  <a href="admissions.html" style="color:var(--gold);">Apply Now</a> ·
   <a href="contact.html" style="color:var(--gold);">Contact Us</a>
 </div>
 
@@ -201,9 +202,9 @@ const pageGalleryImages = [
   { src: '../img/A level students thanksgiving .png', caption: 'A-Level Students Thanksgiving', cat: 'events' },
 
 
-  { src: '../img/assbly.jpeg', caption: 'School Assembly â€” Morning Devotion', cat: 'worship' },
+  { src: '../img/assbly.jpeg', caption: 'School Assembly - Morning Devotion', cat: 'worship' },
 
-  { src: '../img/bo gams.jpg', caption: 'Board Games â€” Students at Play', cat: 'sports' },
+  { src: '../img/bo gams.jpg', caption: 'Board Games - Students at Play', cat: 'sports' },
   { src: '../img/director students1.png', caption: 'Director with Students', cat: 'events' },
   { src: '../img/director.png', caption: 'The School Director', cat: 'events' },
   { src: '../img/examination hall.png', caption: 'Examination Hall', cat: 'academics' },
@@ -213,8 +214,8 @@ const pageGalleryImages = [
 
 
   { src: '../img/kibiina2.jpg', caption: 'Choir Practice Session', cat: 'worship' },
-  { src: '../img/kisuro.jpg', caption: 'Classroom Session â€” Kiswahili Lesson', cat: 'academics' },
-  { src: '../img/library Image2.jpg', caption: 'School Library â€” A Space for Learning', cat: 'academics' },
+  { src: '../img/kisuro.jpg', caption: 'Classroom Session - Kiswahili Lesson', cat: 'academics' },
+  { src: '../img/library Image2.jpg', caption: 'School Library - A Space for Learning', cat: 'academics' },
   { src: '../img/o level students group photo.png', caption: 'O-Level Students Group Photo', cat: 'academics' },
 
   { src: '../img/olevel students with DOS.png', caption: 'O-Level Students with DOS', cat: 'events' },
@@ -223,7 +224,7 @@ const pageGalleryImages = [
   { src: '../img/prom3.png', caption: 'Prom Night', cat: 'events' },
   { src: '../img/promo2.png', caption: 'Promotional Event', cat: 'events' },
   { src: '../img/school campus.png', caption: 'School Campus', cat: 'events' },
-  { src: '../img/school compound.jpg', caption: 'School Compound â€” Beautiful Campus Views', cat: 'events' },
+  { src: '../img/school compound.jpg', caption: 'School Compound - Beautiful Campus Views', cat: 'events' },
   { src: '../img/school compund square.png', caption: 'School Compound Square', cat: 'events' },
   { src: '../img/School logo.jpeg', caption: 'St. John Paul II Day &amp; Boarding School Nakuwadde - Bulenga Logo', cat: 'events' },
   { src: '../img/Screenshot 2026-06-08 162353.jpg', caption: 'Science Lab Practical', cat: 'academics' },

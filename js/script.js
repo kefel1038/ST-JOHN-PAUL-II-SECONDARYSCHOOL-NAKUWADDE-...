@@ -27,18 +27,32 @@ window.addEventListener('scroll', () => {
   }
 });
 
+const menuOverlay = (() => {
+  const el = document.createElement('div');
+  el.className = 'menu-overlay';
+  el.id = 'menuOverlay';
+  document.body.appendChild(el);
+  return el;
+})();
+
+function closeMenu() {
+  hamburger?.classList.remove('active');
+  navMenu?.classList.remove('open');
+  menuOverlay?.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
 hamburger?.addEventListener('click', () => {
-  hamburger.classList.toggle('active');
-  navMenu?.classList.toggle('open');
-  document.body.style.overflow = navMenu?.classList.contains('open') ? 'hidden' : '';
+  const isOpen = navMenu?.classList.toggle('open');
+  hamburger?.classList.toggle('active', isOpen);
+  menuOverlay?.classList.toggle('active', isOpen);
+  document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
+menuOverlay?.addEventListener('click', closeMenu);
+
 $$('.nav-link').forEach(link => {
-  link.addEventListener('click', () => {
-    hamburger?.classList.remove('active');
-    navMenu?.classList.remove('open');
-    document.body.style.overflow = '';
-  });
+  link.addEventListener('click', closeMenu);
 });
 
 $('#backToTop')?.addEventListener('click', () => {
@@ -83,28 +97,19 @@ function animateCounter(el) {
 const galleryImages = [
   { src: 'img/493997268_1402715580740031_3498673567538420048_n.jpg', caption: 'School Life Moments', cat: 'events' },
   { src: 'img/559949554_1242871727862746_4853270271445248006_n.jpg', caption: 'Students in Uniform', cat: 'events' },
-  { src: 'img/7eef9a8d222b7c40acad77a9896093a7~tplv-tiktokx-cropcenter_1080_1080 (1).jpeg', caption: 'School TikTok Challenge', cat: 'events' },
   { src: 'img/a leevel students 4.png', caption: 'A-Level Students', cat: 'academics' },
   { src: 'img/a level students group photo.png', caption: 'A-Level Students Group Photo', cat: 'academics' },
   { src: 'img/A level students thanksgiving .png', caption: 'A-Level Students Thanksgiving', cat: 'events' },
-  { src: 'img/A level students.png', caption: 'A-Level Students', cat: 'academics' },
-  { src: 'img/alevel students.jpg', caption: 'A-Level Students', cat: 'academics' },
   { src: 'img/assbly.jpeg', caption: 'Morning Assembly', cat: 'worship' },
-  { src: 'img/blk.jpg', caption: 'Students in Classroom', cat: 'academics' },
   { src: 'img/bo gams.jpg', caption: 'Board Games', cat: 'sports' },
   { src: 'img/director students1.png', caption: 'Director with Students', cat: 'events' },
   { src: 'img/director.png', caption: 'The School Director', cat: 'events' },
   { src: 'img/examination hall.png', caption: 'Examination Hall', cat: 'academics' },
   { src: 'img/group photo1.png', caption: 'Group Photo', cat: 'events' },
-  { src: 'img/group photo2.png', caption: 'Group Photo', cat: 'events' },
-  { src: 'img/hall.jpg', caption: 'School Hall', cat: 'events' },
-  { src: 'img/images (2).jpg', caption: 'School Activities', cat: 'events' },
-  { src: 'img/intro.jpg', caption: 'School Introduction Day', cat: 'events' },
   { src: 'img/kibiina2.jpg', caption: 'Choir Practice', cat: 'worship' },
   { src: 'img/kisuro.jpg', caption: 'Kiswahili Lesson', cat: 'academics' },
   { src: 'img/library Image2.jpg', caption: 'School Library', cat: 'academics' },
   { src: 'img/o level students group photo.png', caption: 'O-Level Students Group Photo', cat: 'academics' },
-  { src: 'img/o level students seminar2.png', caption: 'O-Level Seminar', cat: 'academics' },
   { src: 'img/olevel students with DOS.png', caption: 'Students with DOS', cat: 'events' },
   { src: 'img/phys.jpg', caption: 'Physics Lesson', cat: 'academics' },
   { src: 'img/prom1.png', caption: 'Prom Night', cat: 'events' },
@@ -124,17 +129,20 @@ const galleryImages = [
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (3).webp', caption: 'School Life Moments', cat: 'events' },
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (5).webp', caption: 'Students at Break', cat: 'events' },
   { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (6).webp', caption: 'Outdoor Activities', cat: 'sports' },
-  { src: 'img/stjohnpauliissnakuwadde_7630763057798548744 (8).webp', caption: 'Class Group Photo', cat: 'academics' },
   { src: 'img/students activities.png', caption: 'Student Activities', cat: 'sports' },
   { src: 'img/students seminar.png', caption: 'Students Seminar', cat: 'academics' },
   { src: 'img/Teacher award2.png', caption: 'Teacher Award Ceremony', cat: 'events' },
   { src: 'img/teachers event.png', caption: 'Teachers Event', cat: 'events' },
   { src: 'img/teachers group photo.png', caption: 'Teachers Group Photo', cat: 'events' },
   { src: 'img/teachers2.jpg', caption: 'Teachers', cat: 'academics' },
-  { src: 'img/teachers3.png', caption: 'Teachers', cat: 'academics' },
   { src: 'img/tr st.webp', caption: 'Staff Meeting', cat: 'academics' },
   { src: 'img/trs.webp', caption: 'Our Teachers', cat: 'academics' },
   { src: 'img/visitors to the School.jpg', caption: 'Visitors to the School', cat: 'events' },
+  { src: 'img/academics on charge.jpg', caption: 'Academics on Charge', cat: 'academics' },
+  { src: 'img/altar boys.jpg', caption: 'Altar Boys', cat: 'worship' },
+  { src: 'img/school campus.jpg', caption: 'School Campus View', cat: 'events' },
+  { src: 'img/Rev Fr leads Mass.jpg', caption: 'Rev Fr Leads Mass', cat: 'worship' },
+  { src: 'img/IMG-20260611-WA0025.jpg', caption: 'School Activity', cat: 'events' },
 ];
 
 let currentGalleryFilter = 'all';

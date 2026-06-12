@@ -743,26 +743,6 @@ input, textarea, select { font-family: inherit; }
 /* === MOBILE TOUCH SWIPE INDICATOR === */
 .swipe-hint {
   display: none;
-  text-align: center;
-  font-family: var(--font-ui);
-  font-size: 0.75rem;
-  color: var(--gray-400);
-  margin-top: -16px;
-  margin-bottom: 16px;
-  gap: 6px;
-  align-items: center;
-  justify-content: center;
-}
-.swipe-hint i {
-  font-size: 0.9rem;
-  animation: swipeAnim 1.5s ease-in-out infinite;
-}
-@keyframes swipeAnim {
-  0%, 100% { transform: translateX(0); }
-  50% { transform: translateX(6px); }
-}
-@media (max-width: 768px) {
-  .swipe-hint { display: flex; }
 }
 
 /* === ANNOUNCEMENT TICKER === */
@@ -1387,6 +1367,11 @@ input, textarea, select { font-family: inherit; }
   margin-bottom: 32px;
   justify-content: center;
 }
+@media (max-width: 768px) {
+  .gallery-filter { flex-wrap: nowrap; overflow-x: auto; justify-content: flex-start; -webkit-overflow-scrolling: touch; scrollbar-width: none; padding: 0 0 4px; }
+  .gallery-filter::-webkit-scrollbar { display: none; }
+  .filter-btn { flex-shrink: 0; }
+}
 .filter-btn {
   font-family: var(--font-ui);
   font-size: 0.8rem;
@@ -1871,6 +1856,7 @@ input, textarea, select { font-family: inherit; }
 }
 .form-control {
   width: 100%;
+  max-width: 100%;
   padding: 12px 16px;
   border: 2px solid var(--gray-200);
   border-radius: var(--radius);
@@ -2416,7 +2402,8 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     position: fixed;
     top: 0;
     right: -100%;
-    width: 300px;
+    width: 280px;
+    max-width: 80vw;
     height: 100vh;
     background: var(--white);
     flex-direction: column;
@@ -2428,6 +2415,22 @@ textarea.form-control { resize: vertical; min-height: 100px; }
     gap: 4px;
   }
   .nav-menu.open { right: 0; }
+
+  .menu-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+  }
+  .menu-overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
 
   .nav-link {
     padding: 12px 16px;
