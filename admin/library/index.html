@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex, nofollow" />
+  <title>Library Admin - St. John Paul II SS Nakuwadde</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../../css/admin-library.css" />
+</head>
+<body>
+  <div class="admin-wrap">
+    <!-- Login Screen -->
+    <div id="adminLogin" class="admin-login">
+      <div class="admin-login-card">
+        <img src="../../school_logo.png" alt="School Logo" style="width:80px;margin:0 auto 16px;" />
+        <h2>Library Admin</h2>
+        <p style="color:var(--gray-500);margin-bottom:24px;font-size:0.9rem;">Sign in to manage learning resources</p>
+        <div id="loginError" class="admin-login-error" style="display:none;"></div>
+        <form id="loginForm">
+          <div class="admin-form-group">
+            <label>Email</label>
+            <input type="email" id="loginEmail" required placeholder="admin@school.ug" />
+          </div>
+          <div class="admin-form-group">
+            <label>Password</label>
+            <input type="password" id="loginPassword" required placeholder="Enter password" />
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%;padding:14px;font-size:1rem;">
+            <i class="fas fa-lock"></i> Sign In
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="adminDashboard" style="display:none;">
+      <!-- Header -->
+      <div class="admin-header">
+        <div class="container">
+          <div class="admin-header-inner">
+            <div class="admin-header-left">
+              <img src="../../school_logo.png" alt="Logo" style="width:36px;" />
+              <div>
+                <h3>Library Resource Manager</h3>
+                <p>St. John Paul II SS Nakuwadde</p>
+              </div>
+            </div>
+            <div class="admin-header-right">
+              <span id="adminUserEmail" style="font-size:0.85rem;color:var(--gray-400);"></span>
+              <button id="logoutBtn" class="btn btn-outline btn-sm"><i class="fas fa-sign-out-alt"></i> Sign Out</button>
+              <a href="../../library/" class="btn btn-gold btn-sm" target="_blank"><i class="fas fa-external-link-alt"></i> View Library</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container" style="padding-top:100px;padding-bottom:40px;">
+        <!-- Upload Form -->
+        <div class="admin-card">
+          <div class="admin-card-header">
+            <h3><i class="fas fa-upload"></i> Upload New Resource</h3>
+          </div>
+          <div class="admin-card-body">
+            <form id="uploadForm" enctype="multipart/form-data">
+              <div class="admin-form-row">
+                <div class="admin-form-group">
+                  <label>Title *</label>
+                  <input type="text" id="resTitle" required />
+                </div>
+                <div class="admin-form-group">
+                  <label>Author</label>
+                  <input type="text" id="resAuthor" placeholder="St. John Paul II SS Nakuwadde" />
+                </div>
+              </div>
+              <div class="admin-form-row">
+                <div class="admin-form-group">
+                  <label>Subject *</label>
+                  <select id="resSubject" required>
+                    <option value="">Select Subject</option>
+                    <option value="Mathematics">Mathematics</option>
+                    <option value="English">English</option>
+                    <option value="Physics">Physics</option>
+                    <option value="Chemistry">Chemistry</option>
+                    <option value="Biology">Biology</option>
+                    <option value="Geography">Geography</option>
+                    <option value="History">History</option>
+                    <option value="CRE">C.R.E</option>
+                    <option value="ICT">ICT</option>
+                    <option value="Kiswahili">Kiswahili</option>
+                    <option value="Literature">Literature</option>
+                    <option value="Agriculture">Agriculture</option>
+                    <option value="Entrepreneurship">Entrepreneurship</option>
+                  </select>
+                </div>
+                <div class="admin-form-group">
+                  <label>Class Level</label>
+                  <select id="resClass">
+                    <option value="All Levels">All Levels</option>
+                    <option value="S.1">Senior 1</option>
+                    <option value="S.2">Senior 2</option>
+                    <option value="S.3">Senior 3</option>
+                    <option value="S.4">Senior 4</option>
+                    <option value="S.5">Senior 5</option>
+                    <option value="S.6">Senior 6</option>
+                  </select>
+                </div>
+              </div>
+              <div class="admin-form-row">
+                <div class="admin-form-group">
+                  <label>Category</label>
+                  <select id="resCategory">
+                    <option value="Revision Notes">Revision Notes</option>
+                    <option value="Past Papers">UNEB Past Papers</option>
+                    <option value="Textbook">Textbooks</option>
+                    <option value="Career Guidance">Career Guidance</option>
+                    <option value="Life Skills">Life Skills</option>
+                    <option value="Vocational Skills">Vocational Skills</option>
+                  </select>
+                </div>
+                <div class="admin-form-group">
+                  <label>PDF File *</label>
+                  <input type="file" id="resFile" accept=".pdf" required />
+                </div>
+              </div>
+              <div class="admin-form-row">
+                <div class="admin-form-group">
+                  <label>Cover Image</label>
+                  <input type="file" id="resCover" accept="image/*" />
+                </div>
+                <div class="admin-form-group">
+                  <label>Description</label>
+                  <textarea id="resDesc" rows="3" placeholder="Brief description of this resource..."></textarea>
+                </div>
+              </div>
+              <div style="margin-top:16px;">
+                <button type="submit" class="btn btn-gold" id="uploadBtn">
+                  <i class="fas fa-cloud-upload-alt"></i> Upload Resource
+                </button>
+                <span id="uploadMsg" style="margin-left:12px;font-size:0.85rem;"></span>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- Resources Table -->
+        <div class="admin-card" style="margin-top:24px;">
+          <div class="admin-card-header">
+            <h3><i class="fas fa-book"></i> Library Resources</h3>
+            <span id="resourcesCount" style="font-size:0.85rem;color:var(--gray-500);"></span>
+          </div>
+          <div class="admin-card-body">
+            <div id="adminLoading" class="admin-loading">Loading resources...</div>
+            <div id="adminTableWrap" style="display:none;">
+              <div class="admin-table-scroll">
+                <table class="admin-table" id="resourcesTable">
+                  <thead>
+                    <tr>
+                      <th>Title</th>
+                      <th>Subject</th>
+                      <th>Class</th>
+                      <th>Category</th>
+                      <th>Downloads</th>
+                      <th>Date</th>
+                      <th>Actions</th>
+                    </tr>
+                  </thead>
+                  <tbody id="resourcesBody"></tbody>
+                </table>
+              </div>
+            </div>
+            <div id="adminEmpty" style="display:none;text-align:center;padding:40px;color:var(--gray-400);">
+              <i class="fas fa-book-open" style="font-size:2.5rem;margin-bottom:12px;display:block;"></i>
+              No resources yet. Upload your first resource above.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast"><span id="toastMsg"></span></div>
+
+  <script src="../../js/admin-library.js"></script>
+</body>
+</html>

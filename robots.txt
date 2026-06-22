@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+
+Sitemap: https://st-john-paul-ii-secondaryschool-nak.vercel.app/sitemap.xml
