@@ -1,7 +1,7 @@
 'use strict';
 
 const SUPABASE_URL = 'https://hwifjctgavrhnjqrrvkf.supabase.co';
-const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3aWZqY3RnYXZyaG5qcXJydmtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NDkyODc1MTAsImV4cCI6MjA2NDg2MzUxMH0.4X8fg0j6hnmhkNFHhTfM2rAu7kPwJ3_OABQ2vNMj3Pk';
+const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh3aWZqY3RnYXZyaG5qcXJydmtmIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODA5MTczMzMsImV4cCI6MjA5NjQ5MzMzM30.tNa6s3MPvqv1pYEE0uq1oZFDiW9qyeF_XoZSMtra2VI';
 
 const $ = (sel, ctx) => (ctx || document).querySelector(sel);
 const $$ = (sel, ctx) => [...(ctx || document).querySelectorAll(sel)];
@@ -22,7 +22,10 @@ document.addEventListener('DOMContentLoaded', () => {
 
 /* Supabase client (direct fetch) */
 function supabaseRequest(method, path, body, token) {
-  const headers = { 'Content-Type': 'application/json' };
+  const headers = {
+    'Content-Type': 'application/json',
+    'apikey': SUPABASE_ANON_KEY
+  };
   if (token) headers['Authorization'] = `Bearer ${token}`;
   return fetch(`${SUPABASE_URL}${path}`, { method, headers, body: body ? JSON.stringify(body) : undefined });
 }
