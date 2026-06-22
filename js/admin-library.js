@@ -43,18 +43,25 @@ function setupLogin() {
 
     try {
       const res = await supabaseRequest('POST', '/auth/v1/token?grant_type=password', { email, password });
-      const data = await res.json();
+      let data;
+      try {
+        data = await res.json();
+      } catch (_) {
+        const text = await res.text();
+        throw new Error(text || `HTTP ${res.status}: Response was not JSON`);
+      }
 
       if (data.access_token) {
         authToken = data.access_token;
         localStorage.setItem('jp2_admin_token', authToken);
+        localStorage.setItem('jp2_admin_email', email);
         showDashboard();
         loadResources();
       } else {
-        showLoginError(data.error_description || data.error || 'Invalid credentials');
+        showLoginError(data.error_description || data.error || data.msg || 'Invalid credentials');
       }
     } catch (err) {
-      showLoginError('Connection error. Please try again.');
+      showLoginError(err.message || 'Connection error. Please try again.');
     }
 
     btn.innerHTML = orig;
