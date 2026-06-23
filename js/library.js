@@ -6,6 +6,8 @@ const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 const $ = (sel, ctx) => (ctx || document).querySelector(sel);
 const $$ = (sel, ctx) => [...(ctx || document).querySelectorAll(sel)];
 
+const supabase = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
 let allResources = [];
 let currentView = 'grid';
 let favorites = JSON.parse(localStorage.getItem('jp2_library_favs') || '[]');
@@ -51,24 +53,25 @@ document.addEventListener('DOMContentLoaded', () => {
   setupBackToTop();
 });
 
-/* Load resources from API and merge with external */
+/* Load resources from Supabase and merge with external */
 function loadResources() {
   showLoading(true);
-  const params = new URLSearchParams();
   const subject = $('#filterSubject')?.value;
   const classLevel = $('#filterClass')?.value;
   const category = $('#filterCategory')?.value;
   const search = $('#librarySearch')?.value.trim();
 
-  if (subject && subject !== 'all') params.set('subject', subject);
-  if (classLevel && classLevel !== 'all') params.set('class_level', classLevel);
-  if (category && category !== 'all') params.set('category', category);
-  if (search) params.set('search', search);
+  let query = supabase.from('library_resources').select('*');
 
-  const url = `/api/library${params.toString() ? '?' + params.toString() : ''}`;
+  if (subject && subject !== 'all') query = query.eq('subject', subject);
+  if (classLevel && classLevel !== 'all') query = query.eq('class_level', classLevel);
+  if (category && category !== 'all') query = query.eq('category', category);
+  if (search) {
+    query = query.or(`title.ilike.%${search}%,author.ilike.%${search}%,subject.ilike.%${search}%,description.ilike.%${search}%`);
+  }
 
   Promise.all([
-    fetch(url).then(r => r.json()).catch(() => []),
+    query.order('created_at', { ascending: false }).then(({ data, error }) => error ? [] : (data || [])),
     Promise.resolve(filterExternal(subject, classLevel, category, search))
   ])
   .then(([dbResources, extResults]) => {
@@ -249,7 +252,7 @@ function downloadResource(id) {
   const resource = getResource(id);
   if (!resource || !resource.file_url) return;
 
-  fetch(`/api/library?id=${id}`, { method: 'PATCH' }).catch(() => {});
+  supabase.rpc('increment_download_count', { resource_id: id }).catch(() => {});
 
   const a = document.createElement('a');
   a.href = resource.file_url;
